@@ -3,7 +3,6 @@ package ai;
 import gamelogic.Guess;
 import gamelogic.Score;
 import utils.Constants;
-import utils.DataHandler;
 
 import java.util.*;
 
@@ -11,23 +10,21 @@ public class AI {
 
     private ArrayList<String> possibleAnswers;
     private HashMap<String, HashMap<String, Score>> allScores, possibleScores;
-    private DataHandler handler;
 
 
     @SuppressWarnings("unchecked")
-    public AI(DataHandler handler){
-        this.handler = handler;
+    public AI(){
         possibleAnswers = (ArrayList<String>) Constants.allStringCombinations.clone();
         allScores = (HashMap<String, HashMap<String, Score>>) Constants.possibleScores.clone();
         possibleScores = (HashMap<String, HashMap<String, Score>>) Constants.possibleScores.clone();
     }
 
-    public int[] makeGuesses(){
-        if(handler.getNumberOfGuesses() == 0){
+    public int[] makeGuesses(boolean isInitialGuess, String LastGuess, Score lastScore){
+        if(isInitialGuess){
             return new int[]{0,0,1,1};
         }
         for(int i = 0; i < possibleAnswers.size(); i++){
-            if(!allScores.get(handler.getLastGuess()).get(possibleAnswers.get(i)).equals(handler.getLastScore())){
+            if(!allScores.get(LastGuess).get(possibleAnswers.get(i)).equals(lastScore)){
                 possibleAnswers.remove(i);
                 i --; //remove impossible answers from possibleAnswers
             }

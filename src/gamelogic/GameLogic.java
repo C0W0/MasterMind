@@ -1,7 +1,6 @@
 package gamelogic;
 
 import ai.AI;
-import utils.DataHandler;
 import utils.Utils.ColourCombination;
 
 import java.util.Arrays;
@@ -17,13 +16,13 @@ public class GameLogic {
 
     public GameLogic(){
         numberOfGuesses = 0;
-        code = new int[]{4, 3, 2, 5};
-        ai = new AI(new DataHandler(this));
+        code = new int[]{2, 4, 1, 0};
+        ai = new AI();
     }
 
     public void play(){
         while (numberOfGuesses < 10){
-            int[] guess = ai.makeGuesses();
+            int[] guess = ai.makeGuesses(numberOfGuesses == 0, lastGuess, lastScore);
             lastGuess = ColourCombination.toStringColour(guess);
             numberOfGuesses ++;
             lastScore = ColourCombination.match(code, guess);

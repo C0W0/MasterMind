@@ -4,12 +4,14 @@ Terry Zha and Jonathan Xie
 September 23, 2020
 Java 13.0.2
 The game class of the Code Breaker
-@reference https://github.com/C0W0/2D-Java-Game-Development by C0W0 (Terry Zha)
 ===============================================================================
 */
 
 import display.Display;
 import gfx.Assets;
+import io.MouseManager;
+import state.AiDecodeState;
+import state.State;
 import utils.Constants;
 import utils.FpsTimer;
 
@@ -21,7 +23,6 @@ public class Game implements Runnable{
     //game loop
     private FpsTimer timer;
     private Thread thread;
-    private int fps;
 
     //graphics
     private Display display;
@@ -29,19 +30,21 @@ public class Game implements Runnable{
     private Graphics graphics;
 
     //input
-
-    //ui
+    private MouseManager mouseManager;
 
     //frame parameters
     private final String title;
     private final int width, height;
     private boolean running = false;
 
+    //state
+    private State currentState;
 
     Game(String title, int width, int height){
         this.title = title;
         this.width = width;
         this.height = height;
+        mouseManager = new MouseManager();
     }
 
     private void init(){
@@ -49,6 +52,11 @@ public class Game implements Runnable{
         timer = new FpsTimer(30);
         Assets.init();
         Constants.init();
+        display.getFrame().addMouseListener(mouseManager);
+        display.getFrame().addMouseMotionListener(mouseManager);
+        display.getCanvas().addMouseListener(mouseManager);
+        display.getCanvas().addMouseMotionListener(mouseManager);
+        setState(new AiDecodeState()); //hard coded for now
     }
 
     private void update(){
@@ -65,7 +73,7 @@ public class Game implements Runnable{
         graphics.clearRect(0,0,width,height); //clear the screen
         //Draw Below
 
-        graphics.drawImage(Assets.sample, 128, 128, 128,128, null);
+        currentState.render(graphics);
 
         //End Drawing
         bufferStrategy.show();
@@ -123,5 +131,10 @@ public class Game implements Runnable{
 
     public int getHeight() {
         return height;
+    }
+
+    public void setState(State state){
+        mouseManager.setUIManager(state.getUiManager());
+        currentState = state;
     }
 }

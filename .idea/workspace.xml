@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f054f86-f43f-4c28-95c7-8a599d37253a" name="Default Changelist" comment="" />
+    <list default="true" id="0f054f86-f43f-4c28-95c7-8a599d37253a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/state/AiDecodeState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/state/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/ClickListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/UIButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/UIImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/UIManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/UIObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/ai/AI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/ai/AI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/display/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/display/Display.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/gamelogic/GameLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/gamelogic/GameLogic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/gamelogic/Guess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/gamelogic/Guess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/gamelogic/Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/gamelogic/Score.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/gfx/Assets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/gfx/Assets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/io/MouseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/io/MouseManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/utils/DataHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/utils/FpsTimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/utils/FpsTimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/utils/Utils$ColourCombination.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/utils/Utils$ColourCombination.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Master Mind/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Master Mind/utils/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sample.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ai/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ai/AI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamelogic/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamelogic/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gfx/Assets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gfx/Assets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/MouseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/MouseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/DataHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/FpsTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FpsTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,12 +46,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1hurSW2sYYP0R51bgqdJrCN4Kcg" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
@@ -26,6 +66,9 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\terry\programming\Master Mind\res\texture" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\terry\programming\Master Mind\src" />
     </key>
@@ -73,10 +116,22 @@
       <workItem from="1602175364799" duration="1278000" />
       <workItem from="1602184957184" duration="2237000" />
       <workItem from="1602187584330" duration="4846000" />
+      <workItem from="1602701168886" duration="9889000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

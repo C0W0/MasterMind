@@ -11,8 +11,14 @@ public class Score{
 
     @Override
     public String toString(){
-        return "B".repeat(Math.max(0, blackPeg)) +
-                "W".repeat(Math.max(0, whitePeg));
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i < blackPeg; i++){
+            builder.append("B");
+        }
+        for(int i = 0; i < whitePeg; i++){
+            builder.append("W");
+        }
+        return builder.toString();
     }
 
     public int getBlackPeg() {
