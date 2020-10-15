@@ -15,16 +15,20 @@ public class AI {
     @SuppressWarnings("unchecked")
     public AI(){
         possibleAnswers = (ArrayList<String>) Constants.allStringCombinations.clone();
-        allScores = (HashMap<String, HashMap<String, Score>>) Constants.possibleScores.clone();
-        possibleScores = (HashMap<String, HashMap<String, Score>>) Constants.possibleScores.clone();
+        allScores = new HashMap<>();
+        possibleScores = new HashMap<>();
+        for (Map.Entry<String, HashMap<String, Score>> entry : Constants.possibleScores.entrySet()) {
+            allScores.put(entry.getKey(), new HashMap<>(entry.getValue()));
+            possibleScores.put(entry.getKey(), new HashMap<>(entry.getValue()));
+        }
     }
 
-    public int[] makeGuesses(boolean isInitialGuess, String LastGuess, Score lastScore){
+    public int[] makeGuesses(boolean isInitialGuess, String lastGuess, Score lastScore){
         if(isInitialGuess){
             return new int[]{0,0,1,1};
         }
         for(int i = 0; i < possibleAnswers.size(); i++){
-            if(!allScores.get(LastGuess).get(possibleAnswers.get(i)).equals(lastScore)){
+            if(!allScores.get(lastGuess).get(possibleAnswers.get(i)).equals(lastScore)){
                 possibleAnswers.remove(i);
                 i --; //remove impossible answers from possibleAnswers
             }
