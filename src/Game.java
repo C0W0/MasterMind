@@ -11,6 +11,7 @@ import display.Display;
 import gfx.Assets;
 import io.MouseManager;
 import state.AiDecodeState;
+import state.MediumAiState;
 import state.State;
 import utils.Constants;
 import utils.FpsTimer;
@@ -56,7 +57,8 @@ public class Game implements Runnable{
         display.getFrame().addMouseMotionListener(mouseManager);
         display.getCanvas().addMouseListener(mouseManager);
         display.getCanvas().addMouseMotionListener(mouseManager);
-        setState(new AiDecodeState()); //hard coded for now
+        //setState(new AiDecodeState());
+        setState(new MediumAiState());
     }
 
     private void update(){
