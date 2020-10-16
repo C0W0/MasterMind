@@ -63,6 +63,13 @@ public class PlayerDecodeState extends GameState {
         addAllColourImages(allPegs, scoreImage);
 
         emptyCurrentGuess();
+        if(score.isDecoded()){
+            System.out.println("Player won");
+            return;
+        } else if(numberOfGuesses >= 10){
+            System.out.println("Player lost");
+            return;
+        }
         numberOfGuesses ++;
     }
 

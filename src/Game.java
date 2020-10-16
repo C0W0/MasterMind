@@ -10,9 +10,7 @@ The game class of the Code Breaker
 import display.Display;
 import gfx.Assets;
 import io.MouseManager;
-import state.AiDecodeState;
-import state.MediumAiState;
-import state.PlayerDecodeState;
+import state.HardAiState;
 import state.State;
 import utils.Constants;
 import utils.FpsTimer;
@@ -59,8 +57,8 @@ public class Game implements Runnable{
         display.getCanvas().addMouseListener(mouseManager);
         display.getCanvas().addMouseMotionListener(mouseManager);
 
-        //setState(new AiDecodeState());
-        setState(new PlayerDecodeState());
+        setState(new HardAiState());
+//        setState(new PlayerDecodeState());
 
     }
 

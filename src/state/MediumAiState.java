@@ -3,7 +3,6 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import ai.AI;
 import gamelogic.Score;
 import gfx.Assets;
 import ui.UIButton;
@@ -22,7 +21,6 @@ public class MediumAiState extends GameState {
 	private int numberOfGuesses,coloursFound,choice;
 	private String lastGuess;
 	private Score lastScore;
-	private AI ai;
 
 	private int[] guess = new int[4];
 	private int[] knownColours = new int[4];
