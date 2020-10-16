@@ -9,9 +9,8 @@ import utils.Utils;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class AiDecodeState extends State {
+public class AiDecodeState extends GameState {
 
-    private BufferedImage[][] panel, allPegs;
     private BufferedImage[] currentPegs;
     private int blackPegCount, whitePegCount;
 
@@ -22,25 +21,17 @@ public class AiDecodeState extends State {
 
     public AiDecodeState(){
         super();
-        panel = new BufferedImage[10][4];
         currentPegs = new BufferedImage[4];
-        allPegs = new BufferedImage[20][2];
         uiManager.addUIButton(new UIButton(150, 150, 30, 30, Assets.peg_black, this::incrementBlackPegs));
         uiManager.addUIButton(new UIButton(200, 150, 30, 30, Assets.peg_white, this::incrementWhitePegs));
         uiManager.addUIButton(new UIButton(150, 200, 30, 30, Assets.yes, this::confirmScore));
         uiManager.addUIButton(new UIButton(200, 200, 30, 30, Assets.no, this::removeScore));
-        uiManager.addUIButton(new UIButton(150, 600, 80, 80, Assets.yes, this::init));
     }
 
     @Override
-    public void init() {
-        panel = new BufferedImage[10][4];
-        currentPegs = new BufferedImage[4];
-        allPegs = new BufferedImage[20][2];
-        blackPegCount = 0;
-        whitePegCount = 0;
-        numberOfGuesses = 0;
+    protected void start() {
         removeScore();
+        numberOfGuesses = 0;
         lastScore = null;
         lastGuess = null;
         ai = new AI();
@@ -50,29 +41,11 @@ public class AiDecodeState extends State {
     }
 
     @Override
-    public void render(Graphics graphics) {
-        uiManager.render(graphics);
-        for(int y = 0; y < panel.length; y++){
-            for(int x = 0; x < panel[y].length; x++){
-                if(panel[y][x] != null)
-                    graphics.drawImage(panel[y][x], 500+50*x, 150+60*y, 30, 30, null);
-            }
-        }
-
-        for(int y = 0; y < allPegs.length; y++){
-            for(int x = 0; x < allPegs[y].length; x++){
-                if(allPegs[y][x] != null){
-                    graphics.drawImage(allPegs[y][x], 710+30*x, 150+60*y, 15, 15, null);
-                }
-            }
-        }
-
+    protected void postRender(Graphics graphics) {
         for(int i = 0; i < currentPegs.length; i++){
             if(currentPegs[i] != null)
                 graphics.drawImage(currentPegs[i], 100+50*i, 250, 30, 30, null);
         }
-
-
     }
 
     private BufferedImage[] toColour(int[] guess){
@@ -104,11 +77,11 @@ public class AiDecodeState extends State {
     }
 
     private void incrementBlackPegs(){
-        blackPegCount++;
 //        System.out.println("called");
 //        System.out.println(currentPegs.length);
         for(int i = 0; i < 4; i++){
             if(currentPegs[i] == null){
+                blackPegCount++;
                 currentPegs[i] = Assets.peg_black;
                 return;
             }
@@ -116,9 +89,9 @@ public class AiDecodeState extends State {
     }
 
     private void incrementWhitePegs(){
-        whitePegCount++;
         for(int i = 0; i < 4; i++){
             if(currentPegs[i] == null){
+                whitePegCount++;
                 currentPegs[i] = Assets.peg_white;
                 return;
             }
@@ -128,6 +101,5 @@ public class AiDecodeState extends State {
     private void addAllColourImages(BufferedImage[][] target, BufferedImage[] source){
         target[numberOfGuesses] = source;
     }
-
 
 }
