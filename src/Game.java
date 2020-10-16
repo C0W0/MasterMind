@@ -1,10 +1,26 @@
-/*=============================================================================
+/*==========================================================================================
 Code Breaker
 Terry Zha and Jonathan Xie
 September 23, 2020
 Java 13.0.2
 The game class of the Code Breaker
-===============================================================================
+This is the main object of the Code Breaker. It is used to organize
+GUI, IO, and Game Logic together
+
+list of global variables:
+thread - the thread which controls the render loop of the GUI </type Thread>
+display - a critical graphics object that is responsible for the GUI window </type Display>
+timePerUpdate - the time (in nanosecond) between each frame </type double>
+delta - the portion of time passed between each frame. Once delta reaches 1,
+        a new frame will be rendered. </type double>
+lastTime - the system time (in nanosecond) of last frame rendering </type long>
+mouseManager - a critical IO object that tracks mouse actions </type MouseManager>
+title - the title of the frame </type String>
+width - the width of the frame in pixels </type int>
+height - the height of the frame in pixels </type int>
+running - the control variable for the main loop </type boolean>
+currentState - the current state of the game </type State>
+============================================================================================
 */
 
 import display.Display;
@@ -13,7 +29,6 @@ import io.MouseManager;
 import state.HardAiState;
 import state.State;
 import utils.Constants;
-import utils.FpsTimer;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -21,13 +36,14 @@ import java.awt.image.BufferStrategy;
 public class Game implements Runnable{
 
     //game loop
-    private FpsTimer timer;
     private Thread thread;
 
     //graphics
     private Display display;
-    private BufferStrategy bufferStrategy;
-    private Graphics graphics;
+
+    //fps control
+    private double timePerUpdate, delta;
+    private long lastTime;
 
     //input
     private MouseManager mouseManager;
@@ -40,6 +56,13 @@ public class Game implements Runnable{
     //state
     private State currentState;
 
+    /**The Game method
+     * The constructor method of the Game class
+     *
+     * @param title the passed-in title of the frame
+     * @param width the passed-in width of the frame in pixels
+     * @param height the passed-in height of the frame in pixels
+     */
     Game(String title, int width, int height){
         this.title = title;
         this.width = width;
@@ -47,18 +70,19 @@ public class Game implements Runnable{
         mouseManager = new MouseManager();
     }
 
+    /**The init method
+     * This procedural method is be
+     */
     private void init(){
         display = new Display(title, width, height);
-        timer = new FpsTimer(30);
         Assets.init();
         Constants.init();
         display.getFrame().addMouseListener(mouseManager);
-        display.getFrame().addMouseMotionListener(mouseManager);
         display.getCanvas().addMouseListener(mouseManager);
-        display.getCanvas().addMouseMotionListener(mouseManager);
 
         setState(new HardAiState());
 //        setState(new PlayerDecodeState());
+//        setState(new MediumAiState());
 
     }
 
@@ -67,12 +91,12 @@ public class Game implements Runnable{
     }
 
     private void render(){
-        bufferStrategy = display.getCanvas().getBufferStrategy();
+        BufferStrategy bufferStrategy = display.getCanvas().getBufferStrategy();
         if(bufferStrategy == null){
             display.getCanvas().createBufferStrategy(3);
             return;
         }
-        graphics = bufferStrategy.getDrawGraphics();
+        Graphics graphics = bufferStrategy.getDrawGraphics();
         graphics.clearRect(0,0,width,height); //clear the screen
         //Draw Below
 
@@ -89,7 +113,7 @@ public class Game implements Runnable{
 
         while(running){
 
-            if (timer.check()){
+            if (timerCheck()){
                 update();
                 render();
             }
@@ -105,6 +129,11 @@ public class Game implements Runnable{
         }
 
         running = true;
+
+        timePerUpdate = 1e9/30;
+        delta = 0;
+        lastTime = System.nanoTime();
+
         thread = new Thread(this);
         thread.start();
     }
@@ -122,19 +151,20 @@ public class Game implements Runnable{
         }
     }
 
+    private boolean timerCheck(){
+        long now = System.nanoTime();
+        delta += (now - lastTime)/timePerUpdate;
+        lastTime = now;
+        if (delta >= 1){
+            delta --;
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+
     //getters and setters
-
-    public Display getDisplay() {
-        return display;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
 
     public void setState(State state){
         mouseManager.setUIManager(state.getUiManager());

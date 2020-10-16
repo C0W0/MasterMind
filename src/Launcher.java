@@ -7,22 +7,18 @@ The main class of the Code Breaker
 ===============================================================================
 */
 
-//import gamelogic.GameLogic;
-//import utils.Constants;
-
 public class Launcher {
 
+    /**main method:
+     * This procedural method is called automatically and is used to organize the calling of other methods
+     *
+     * list of local variables:
+     * game - the main game object used for game logic, gui, and mouseIO </type Game>
+     * @param args ...
+     */
     public static void main(String[] args){
         Game game = new Game("Code Breaker", 1024, 768);
         game.start();
-//        Constants.init();
-//        GameLogic logic = new GameLogic();
-//        logic.play();
-    }
-
-
-    private static void play(){
-
     }
 
 }
