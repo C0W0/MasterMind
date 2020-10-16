@@ -27,6 +27,7 @@ import display.Display;
 import gfx.Assets;
 import io.MouseManager;
 import state.HardAiState;
+import state.MediumAiState;
 import state.State;
 import utils.Constants;
 
@@ -83,6 +84,7 @@ public class Game implements Runnable{
         setState(new HardAiState());
 //        setState(new PlayerDecodeState());
 //        setState(new MediumAiState());
+        setState(new MediumAiState());
 
     }
 
