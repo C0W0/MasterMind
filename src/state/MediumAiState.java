@@ -180,25 +180,25 @@ public class MediumAiState extends State {
 		}
 
 		return false;*/
-	private void incrementBlackPegs(){
-		for(int i = 0; i < 4; i++){
-			if(currentPegs[i] == null){
-				blackPegCount++;
-				currentPegs[i] = Assets.peg_black;
-				return;
-			}
-		}
-	}
-
-	private void incrementWhitePegs(){
-		for(int i = 0; i < 4; i++){
-			if(currentPegs[i] == null){
-				whitePegCount++;
-				currentPegs[i] = Assets.peg_white;
-				return;
-			}
-		}
-	}
+//	private void incrementBlackPegs(){
+//		for(int i = 0; i < 4; i++){
+//			if(currentPegs[i] == null){
+//				blackPegCount++;
+//				currentPegs[i] = Assets.peg_black;
+//				return;
+//			}
+//		}
+//	}
+//
+//	private void incrementWhitePegs(){
+//		for(int i = 0; i < 4; i++){
+//			if(currentPegs[i] == null){
+//				whitePegCount++;
+//				currentPegs[i] = Assets.peg_white;
+//				return;
+//			}
+//		}
+//	}
 	
 	private void addAllColourImages(BufferedImage[][] target, BufferedImage[] source){
         target[numberOfGuesses] = source;

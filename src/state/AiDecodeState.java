@@ -64,6 +64,9 @@ public class AiDecodeState extends GameState {
         if(lastScore.isDecoded()){
             System.out.println("AI won");
             return;
+        }else if(numberOfGuesses > 10){
+            System.out.println("AI lose");
+            return;
         }
         int[] guess = ai.makeGuesses(false, lastGuess, lastScore);
         lastGuess = Utils.ColourCombination.toStringColour(guess);
