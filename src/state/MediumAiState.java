@@ -2,6 +2,7 @@ package state;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import ai.AI;
 import gamelogic.Score;
@@ -20,9 +21,6 @@ public class MediumAiState extends GameState {
 	private boolean firstGuess = true;
 	
 	private int numberOfGuesses,coloursFound,choice;
-	private String lastGuess;
-	private Score lastScore;
-	private AI ai;
 
 	private int[] guess = new int[4];
 	private int[] knownColours = new int[4];
@@ -82,8 +80,6 @@ public class MediumAiState extends GameState {
 	private void confirmFeedback() {
 		
 		numberOfGuesses++;
-		System.out.println("made guess #"+numberOfGuesses);
-		System.out.println("coloursFound: "+coloursFound);
 		
 		if(blackPegCount==4) {
 			System.out.println("decoded");
@@ -95,28 +91,37 @@ public class MediumAiState extends GameState {
 			return;
 		}
 		
-		if(numberOfGuesses<=5 && coloursFound<4) {
-			updateColoursFound();			
+		if(coloursFound<4)
+			updateColoursFound();
+		
+		if(numberOfGuesses==6 && coloursFound<4)
+			fillRemainingColour();
+			
+		else if(numberOfGuesses<=6 && coloursFound<4)			
 			findKnownColours();
-		}
-		else if(coloursFound==4) {
-			System.out.println("guessMade method called");
+		
+		if(coloursFound==4) {
+			
+			if(!generated) {
+				System.out.println("generated");
+				generatePermutations(4,knownColours);
+				generated = true;
+				System.out.println(Arrays.deepToString(allPermutations));
+			}
 			makeGuess();
+			System.out.println(choiceList);
 		}
 		
-		if(coloursFound==4 && generated==false) {
-			generatePermutations(4,knownColours);
-			generated = true;
-		}
-			
+		System.out.println("made guess #"+numberOfGuesses);
+		System.out.println("coloursFound: "+coloursFound);
+		System.out.println("knownColours: "+Arrays.toString(knownColours));
+		
 		removeFeedback();
 	}
 
 	private void removeFeedback() {
-		
 		currentPegs = new BufferedImage[4];
 		whitePegCount = blackPegCount = 0;
-		
 	}
 
 
@@ -124,7 +129,6 @@ public class MediumAiState extends GameState {
 	protected void start() {
 		initiateVariables();
 		confirmFeedback();
-
 	}
 
 
@@ -150,18 +154,22 @@ public class MediumAiState extends GameState {
 		for(int i=0; i<guess.length; i++)
 			guess[i]=numberOfGuesses-1;
 
-		while(numberOfGuesses==5 && coloursFound<4) {
-			knownColours[coloursFound]=5;
-			coloursFound++;
-		}
 		updateDisplay();
 	}
 	
 	public void updateColoursFound(){
-		for(int i=0; i<=blackPegCount; i++)
-			coloursFound++;		
+		for(int i=0; i<blackPegCount; i++) {
+			knownColours[coloursFound]=numberOfGuesses-2;
+			coloursFound++;
+		}
 	}
 	
+	public void fillRemainingColour() {
+		while(numberOfGuesses==6 && coloursFound<4) {
+			knownColours[coloursFound]=5;
+			coloursFound++;
+		}
+	}
 	public void generatePermutations(int n, int[] elements) {
 
 		if(n == 1) {
@@ -198,17 +206,15 @@ public class MediumAiState extends GameState {
 	
 	public void makeGuess() {
 		
+		if(!firstGuess) {
+			removeLastChoice();
+			removeChoices();
+		}
 		getChoiceIndex();
 		
 		createGuess();
 		
 		updateDisplay();
-		
-		removeLastChoice();
-
-		removeChoices();
-		
-		
 	}
 
 		
@@ -230,28 +236,8 @@ public class MediumAiState extends GameState {
 	
 	public void updateDisplay() {
 		
-		for(int i=0; i<guess.length; i++) {
-			
+		for(int i=0; i<guess.length; i++) 
 			guessDisplay[numberOfGuesses-1][i] = Assets.colours[guess[i]];
-			/*if(guess[i]==0)
-				guessDisplay[numberOfGuesses][i] = Assets.square_B;
-				
-			else if(guess[i]==1)
-				guessDisplay[numberOfGuesses][i] = Assets.square_G;
-			
-			else if(guess[i]==2)
-				guessDisplay[numberOfGuesses][i] = Assets.square_O;
-			
-			else if(guess[i]==3)
-				guessDisplay[numberOfGuesses][i] = Assets.square_P;
-			
-			else if(guess[i]==4)
-				guessDisplay[numberOfGuesses][i] = Assets.square_R;
-			
-			else if(guess[i]==5)
-				guessDisplay[numberOfGuesses][i] = Assets.square_Y;
-				*/
-		}
 	}
 	
 	public void removeChoices() {

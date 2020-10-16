@@ -60,7 +60,8 @@ public class Game implements Runnable{
         display.getCanvas().addMouseMotionListener(mouseManager);
 
         //setState(new AiDecodeState());
-        setState(new PlayerDecodeState());
+        //setState(new PlayerDecodeState());
+        setState(new MediumAiState());
 
     }
 
