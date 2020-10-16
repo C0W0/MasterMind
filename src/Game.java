@@ -26,6 +26,7 @@ currentState - the current state of the game </type State>
 import display.Display;
 import gfx.Assets;
 import io.MouseManager;
+import state.EasyAiState;
 import state.HardAiState;
 import state.MediumAiState;
 import state.State;
@@ -81,10 +82,10 @@ public class Game implements Runnable{
         display.getFrame().addMouseListener(mouseManager);
         display.getCanvas().addMouseListener(mouseManager);
 
-        setState(new HardAiState());
+//        setState(new HardAiState());
 //        setState(new PlayerDecodeState());
 //        setState(new MediumAiState());
-        setState(new MediumAiState());
+        setState(new EasyAiState());
 
     }
 
