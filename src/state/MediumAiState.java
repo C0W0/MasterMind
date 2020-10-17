@@ -31,17 +31,16 @@ public class MediumAiState extends GameState {
 		super();
 
 		currentPegs= new BufferedImage[4];
-		
-		uiManager.addUIButton(new UIButton(150, 150, 30, 30, Assets.peg_black, this::incrementBlackPegs));
-		uiManager.addUIButton(new UIButton(250, 150, 30, 30, Assets.peg_white, this::incrementWhitePegs));
-		uiManager.addUIButton(new UIButton(150, 350, 30, 30, Assets.yes, this::confirmFeedback));
-		uiManager.addUIButton(new UIButton(250, 350, 30, 30, Assets.no, this::removeFeedback));
+
+		uiManager.addUIButton(new UIButton(90, 270, 55, 55, Assets.black_peg_button, this::incrementBlackPegs));
+		uiManager.addUIButton(new UIButton(155, 270, 55, 55, Assets.white_peg_button, this::incrementWhitePegs));
+		uiManager.addUIButton(new UIButton(90, 350, 55, 150, Assets.confirm_button, this::confirmFeedback));
+		uiManager.addUIButton(new UIButton(265, 350, 55, 150, Assets.delete_button, this::removeFeedback));
 
 		choiceList = new ArrayList<>();
 		guess = new int[4];
 		knownColours = new int[4];
 		allPermutations = new int[24][4];
-		
 	}
 
 
@@ -67,12 +66,10 @@ public class MediumAiState extends GameState {
 
 	@Override
 	protected void postRender(Graphics graphics) {
-
-		for(int i=0; i<currentPegs.length; i++) { //draws black/white pegs (during selection)
+        graphics.drawImage(Assets.aiGameboard, 0, 0, cornerWidth, cornerHeight, null);
+		for(int i=0; i<currentPegs.length; i++) //draws black/white pegs (during selection)
 			if(currentPegs[i]!=null)
-				graphics.drawImage(currentPegs[i], 100+50*i, 250, 30, 30, null);
-		}
-
+				graphics.drawImage(currentPegs[i], 235+45*i, 275, 40, 40, null);
 	}
 	
 	private void incrementBlackPegs(){
@@ -96,7 +93,7 @@ public class MediumAiState extends GameState {
 	}
 	
 	protected void addAllColourImages(BufferedImage[][] target, BufferedImage[] source){
-        target[numberOfGuesses] = source;
+        target[numberOfGuesses-1] = source;
     }
 
 	private void confirmFeedback() {
@@ -107,12 +104,12 @@ public class MediumAiState extends GameState {
 		for(int i = blackPegCount; i < blackPegCount+whitePegCount; i++)
 			pegsImage[i] = Assets.peg_white;
 
-		addAllColourImages(allPegs, pegsImage);
-
+		if(numberOfGuesses != 0)
+			addAllColourImages(allPegs, pegsImage);
 		numberOfGuesses++;
-		
+
 		if(blackPegCount==4) {
-			System.out.println("decoded");
+			showCode(guess);
 			return;
 		}
 		
@@ -133,18 +130,11 @@ public class MediumAiState extends GameState {
 		if(coloursFound==4) {
 			
 			if(!generated) {
-				System.out.println("generated");
 				generatePermutations(4,knownColours);
 				generated = true;
-				System.out.println(Arrays.deepToString(allPermutations));
 			}
 			makeGuess();
-			System.out.println(choiceList);
 		}
-		
-		System.out.println("made guess #"+numberOfGuesses);
-		System.out.println("coloursFound: "+coloursFound);
-		System.out.println("knownColours: "+Arrays.toString(knownColours));
 		
 		removeFeedback();
 	}
@@ -157,6 +147,7 @@ public class MediumAiState extends GameState {
 
 	private void findKnownColours() {
 		Arrays.fill(guess, numberOfGuesses - 1);
+		System.out.println("called "+numberOfGuesses);
 		addAllColourImages(panel, toColour(guess));
 	}
 	
@@ -225,6 +216,7 @@ public class MediumAiState extends GameState {
 
 		guess = allPermutations[choiceList.get(choice)].clone();
 
+		System.out.println("called B "+numberOfGuesses);
 		addAllColourImages(panel, toColour(guess));
 	}
 
@@ -238,14 +230,6 @@ public class MediumAiState extends GameState {
 				count++;
 		}
 		return count;		
-	}
-
-	protected BufferedImage[] toColour(int[] guess){
-		BufferedImage[] colours = new BufferedImage[4];
-		for(int i = 0; i < 4; i++){
-			colours[i] = Assets.colours[guess[i]];
-		}
-		return colours;
 	}
 
 }

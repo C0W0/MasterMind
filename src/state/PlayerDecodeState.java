@@ -38,6 +38,7 @@ public class PlayerDecodeState extends GameState {
 
     @Override
     protected void postRender(Graphics graphics) {
+        graphics.drawImage(Assets.playerGameboard, 0, 0, cornerWidth, cornerHeight, null);
         for(int i = 0; i < 4; i++)
             if(guessImages[i] != null)
                 graphics.drawImage(guessImages[i], 100+50*i, 250, 30, 30, null);

@@ -25,7 +25,7 @@ public class MouseManager implements MouseListener {
         if(e.getButton() == MouseEvent.BUTTON1 && uiManager != null){
             uiManager.onMouseClick(e);
         }
-//        System.out.println(e.getX()+" "+e.getY());
+        System.out.println(e.getX()+" "+e.getY());
     }
 
     @Override

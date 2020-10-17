@@ -32,10 +32,10 @@ public class HardAiState extends GameState {
     public HardAiState(){
         super();
         currentPegs = new BufferedImage[4];
-        uiManager.addUIButton(new UIButton(150, 150, 30, 30, Assets.peg_black, this::incrementBlackPegs));
-        uiManager.addUIButton(new UIButton(200, 150, 30, 30, Assets.peg_white, this::incrementWhitePegs));
-        uiManager.addUIButton(new UIButton(150, 200, 30, 30, Assets.yes, this::confirmScore));
-        uiManager.addUIButton(new UIButton(200, 200, 30, 30, Assets.no, this::removeScore));
+        uiManager.addUIButton(new UIButton(90, 270, 55, 55, Assets.black_peg_button, this::incrementBlackPegs));
+        uiManager.addUIButton(new UIButton(155, 270, 55, 55, Assets.white_peg_button, this::incrementWhitePegs));
+        uiManager.addUIButton(new UIButton(90, 350, 55, 150, Assets.confirm_button, this::confirmScore));
+        uiManager.addUIButton(new UIButton(265, 350, 55, 150, Assets.delete_button, this::removeScore));
     }
 
     @Override
@@ -61,18 +61,10 @@ public class HardAiState extends GameState {
 
     @Override
     protected void postRender(Graphics graphics) {
-        for(int i = 0; i < currentPegs.length; i++){
+        graphics.drawImage(Assets.aiGameboard, 0, 0, cornerWidth, cornerHeight, null);
+        for(int i = 0; i < currentPegs.length; i++)
             if(currentPegs[i] != null)
-                graphics.drawImage(currentPegs[i], 100+50*i, 250, 30, 30, null);
-        }
-    }
-
-    private BufferedImage[] toColour(int[] guess){
-        BufferedImage[] colours = new BufferedImage[4];
-        for(int i = 0; i < 4; i++){
-            colours[i] = Assets.colours[guess[i]];
-        }
-        return colours;
+                graphics.drawImage(currentPegs[i], 235+45*i, 275, 40, 40, null);
     }
 
     private void confirmScore(){
@@ -81,7 +73,7 @@ public class HardAiState extends GameState {
         removeScore();
         numberOfGuesses ++;
         if(lastScore.isDecoded()){
-            System.out.println("AI won");
+            showCode(Utils.ColourCombination.toIntArrayColour(lastGuess));
             return;
         }else if(numberOfGuesses > 10){
             System.out.println("AI lose");

@@ -7,7 +7,7 @@ A critical graphic class, responsible for the game window
 ===============================================================================
 */
 
-package display;
+package gfx;
 
 import javax.swing.*;
 import java.awt.*;
