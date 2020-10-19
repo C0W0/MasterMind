@@ -21,11 +21,11 @@ public class PlayerDecodeState extends GameState {
         super();
         guessImages = new BufferedImage[4];
         currentGuess = new int[4];
-        uiManager.addUIButton(new UIButton(150, 200, 30, 30, Assets.yes, this::confirmGuess));
-        uiManager.addUIButton(new UIButton(200, 200, 30, 30, Assets.no, this::emptyCurrentGuess));
+        uiManager.addUIButton(new UIButton(95, 360, 55, 150, Assets.confirm_button, this::confirmGuess));
+        uiManager.addUIButton(new UIButton(270, 360, 55, 150, Assets.delete_button, this::emptyCurrentGuess));
         for(int i = 0; i < 6; i++) {
             int colour = i;
-            uiManager.addUIButton(new UIButton(50+50*i, 150, 30, 30, Assets.colours[i], () -> addGuessColour(colour)));
+            uiManager.addUIButton(new UIButton(105+55*i, 240, 30, 30, Assets.colours[i], () -> addGuessColour(colour)));
         }
     }
 
@@ -41,7 +41,7 @@ public class PlayerDecodeState extends GameState {
         graphics.drawImage(Assets.playerGameboard, 0, 0, cornerWidth, cornerHeight, null);
         for(int i = 0; i < 4; i++)
             if(guessImages[i] != null)
-                graphics.drawImage(guessImages[i], 100+50*i, 250, 30, 30, null);
+                graphics.drawImage(guessImages[i], 160+55*i, 300, 30, 30, null);
     }
 
     private void addGuessColour(int colour){
@@ -65,7 +65,7 @@ public class PlayerDecodeState extends GameState {
 
         emptyCurrentGuess();
         if(score.isDecoded()){
-            System.out.println("Player won");
+            showCode(Utils.ColourCombination.toIntArrayColour(code));
             return;
         } else if(numberOfGuesses >= 10){
             System.out.println("Player lost");
