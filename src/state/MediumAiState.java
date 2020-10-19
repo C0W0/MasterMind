@@ -97,6 +97,8 @@ public class MediumAiState extends GameState {
     }
 
 	private void confirmFeedback() {
+		if(!isGameActive)
+			return;
 
 		BufferedImage[] pegsImage = new BufferedImage[4];
 		for(int i = 0; i < blackPegCount; i++)
@@ -110,11 +112,13 @@ public class MediumAiState extends GameState {
 
 		if(blackPegCount==4) {
 			showCode(guess);
+			isGameActive = false;
 			return;
 		}
 		
 		else if(numberOfGuesses>MAXGUESSES) {
 			System.out.println("not decoded");
+			isGameActive = false;
 			return;
 		}
 		

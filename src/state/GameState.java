@@ -8,9 +8,13 @@ import java.awt.image.BufferedImage;
 
 public abstract class GameState extends State{
 
+    //graphics
     protected BufferedImage[][] panel, allPegs;
     protected BufferedImage[] code;
     protected int cornerWidth, cornerHeight;
+
+    //control
+    protected boolean isGameActive;
 
     GameState(){
         panel = new BufferedImage[10][4];
@@ -20,6 +24,7 @@ public abstract class GameState extends State{
         uiManager.addUIButton(new UIButton(135, 648, 90, 90, Assets.restart_button, this::init));
         cornerWidth = (int)(1020.f/2000*1024);
         cornerHeight = (int)(1170.f/1428*768);
+        isGameActive = false;
     }
 
     @Override
@@ -59,6 +64,7 @@ public abstract class GameState extends State{
         panel = new BufferedImage[10][4];
         allPegs = new BufferedImage[10][4];
         code = new BufferedImage[4];
+        isGameActive = true;
 
         start();
     }

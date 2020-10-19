@@ -68,15 +68,19 @@ public class HardAiState extends GameState {
     }
 
     private void confirmScore(){
+        if(!isGameActive)
+            return;
         addAllColourImages(allPegs, currentPegs);
         lastScore = new Score(blackPegCount, whitePegCount);
         removeScore();
         numberOfGuesses ++;
         if(lastScore.isDecoded()){
             showCode(Utils.ColourCombination.toIntArrayColour(lastGuess));
+            isGameActive = false;
             return;
         }else if(numberOfGuesses > 10){
             System.out.println("AI lose");
+            isGameActive = false;
             return;
         }
         int[] guess = makeGuesses();

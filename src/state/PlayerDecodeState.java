@@ -53,6 +53,8 @@ public class PlayerDecodeState extends GameState {
     }
 
     private void confirmGuess(){
+        if(!isGameActive)
+            return;
         addAllColourImages(panel, guessImages);
         String guess = Utils.ColourCombination.toStringColour(currentGuess);
         Score score = Constants.possibleScores.get(guess).get(code);
@@ -66,9 +68,11 @@ public class PlayerDecodeState extends GameState {
         emptyCurrentGuess();
         if(score.isDecoded()){
             showCode(Utils.ColourCombination.toIntArrayColour(code));
+            isGameActive = false;
             return;
         } else if(numberOfGuesses >= 10){
             System.out.println("Player lost");
+            isGameActive = false;
             return;
         }
         numberOfGuesses ++;
