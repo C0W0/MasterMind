@@ -80,9 +80,10 @@ public class Game implements Runnable{
         display.getCanvas().addMouseListener(mouseManager);
 
 //        setState(new HardAiState());
-        setState(new PlayerDecodeState());
+//        setState(new PlayerDecodeState());
 //        setState(new MediumAiState());
 //        setState(new EasyAiState());
+        setState(new PVPState());
 
     }
 

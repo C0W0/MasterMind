@@ -56,7 +56,7 @@ public class HardAiState extends GameState {
 
         int[] guess = makeGuesses();
         lastGuess = Utils.ColourCombination.toStringColour(guess);
-        addAllColourImages(panel, toColour(guess));
+        panel[numberOfGuesses] = toColour(guess);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class HardAiState extends GameState {
     private void confirmScore(){
         if(!isGameActive)
             return;
-        addAllColourImages(allPegs, currentPegs);
+        allPegs[numberOfGuesses] = currentPegs;
         lastScore = new Score(blackPegCount, whitePegCount);
         removeScore();
         numberOfGuesses ++;
@@ -85,7 +85,7 @@ public class HardAiState extends GameState {
         }
         int[] guess = makeGuesses();
         lastGuess = Utils.ColourCombination.toStringColour(guess);
-        addAllColourImages(panel, toColour(guess));
+        panel[numberOfGuesses] = toColour(guess);
     }
 
     private void removeScore(){
@@ -95,25 +95,25 @@ public class HardAiState extends GameState {
     }
 
     private void incrementBlackPegs(){
-//        System.out.println("called");
-//        System.out.println(currentPegs.length);
-        for(int i = 0; i < 4; i++){
-            if(currentPegs[i] == null){
-                blackPegCount++;
-                currentPegs[i] = Assets.peg_black;
-                return;
+        if(isGameActive)
+            for(int i = 0; i < 4; i++){
+                if(currentPegs[i] == null){
+                    blackPegCount++;
+                    currentPegs[i] = Assets.peg_black;
+                    return;
+                }
             }
-        }
     }
 
     private void incrementWhitePegs(){
-        for(int i = 0; i < 4; i++){
-            if(currentPegs[i] == null){
-                whitePegCount++;
-                currentPegs[i] = Assets.peg_white;
-                return;
+        if(isGameActive)
+            for(int i = 0; i < 4; i++){
+                if(currentPegs[i] == null){
+                    whitePegCount++;
+                    currentPegs[i] = Assets.peg_white;
+                    return;
+                }
             }
-        }
     }
 
     private int[] makeGuesses(){
@@ -150,10 +150,6 @@ public class HardAiState extends GameState {
 
         }
         return Guess.getMinimumGuess(guesses);
-    }
-
-    private void addAllColourImages(BufferedImage[][] target, BufferedImage[] source){
-        target[numberOfGuesses] = source;
     }
 
 }

@@ -45,7 +45,7 @@ public class PlayerDecodeState extends GameState {
     }
 
     private void addGuessColour(int colour){
-        if(numberOfGuessColour < 4){
+        if(numberOfGuessColour < 4 && isGameActive){
             currentGuess[numberOfGuessColour] = colour;
             guessImages[numberOfGuessColour] = Assets.colours[colour];
             numberOfGuessColour ++;

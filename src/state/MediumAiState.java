@@ -73,23 +73,25 @@ public class MediumAiState extends GameState {
 	}
 	
 	private void incrementBlackPegs(){
-		for(int i = 0; i < 4; i++){
-			if(currentPegs[i] == null){
-				blackPegCount++;
-				currentPegs[i] = Assets.peg_black;
-				return;
-			}
-		}
+	    if(isGameActive)
+            for(int i = 0; i < 4; i++){
+                if(currentPegs[i] == null){
+                    blackPegCount++;
+                    currentPegs[i] = Assets.peg_black;
+                    return;
+                }
+            }
 	}
 
 	private void incrementWhitePegs(){
-		for(int i = 0; i < 4; i++){
-			if(currentPegs[i] == null){
-				whitePegCount++;
-				currentPegs[i] = Assets.peg_white;
-				return;
-			}
-		}
+        if(isGameActive)
+            for(int i = 0; i < 4; i++){
+                if(currentPegs[i] == null){
+                    whitePegCount++;
+                    currentPegs[i] = Assets.peg_white;
+                    return;
+                }
+            }
 	}
 	
 	protected void addAllColourImages(BufferedImage[][] target, BufferedImage[] source){
