@@ -24,6 +24,8 @@ public class PlayerDecodeState extends GameState {
         currentGuess = new int[4];
         uiManager.addUIButton(new UIButton(95, 360, 55, 150, Assets.confirm_button, this::confirmGuess));
         uiManager.addUIButton(new UIButton(270, 360, 55, 150, Assets.delete_button, this::emptyCurrentGuess));
+        uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.back_button, ()->game.setState(State.states[1])));
+
         for(int i = 0; i < 6; i++) {
             int colour = i;
             uiManager.addUIButton(new UIButton(105+55*i, 240, 30, 30, Assets.colours[i], () -> addGuessColour(colour)));

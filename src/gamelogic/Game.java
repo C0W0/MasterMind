@@ -168,5 +168,6 @@ public class Game implements Runnable{
     public void setState(State state){
         mouseManager.setUIManager(state.getUiManager());
         currentState = state;
+        currentState.init();
     }
 }
