@@ -1,5 +1,3 @@
-import gamelogic.Game;
-
 /*=============================================================================
 Code Breaker
 Terry Zha and Jonathan Xie
@@ -8,6 +6,8 @@ Java 13.0.2
 The main class of the Code Breaker
 ===============================================================================
 */
+import gamelogic.Game;
+
 
 public class Launcher {
 

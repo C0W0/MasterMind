@@ -1,4 +1,3 @@
-package gamelogic;
 /*==========================================================================================
 Code Breaker
 Terry Zha and Jonathan Xie
@@ -23,6 +22,7 @@ running - the control variable for the main loop </type boolean>
 currentState - the current state of the game </type State>
 ============================================================================================
 */
+package gamelogic;
 
 import gfx.Display;
 import gfx.Assets;
@@ -77,7 +77,7 @@ public class Game implements Runnable{
     private void init(){
         display = new Display(title, width, height);
         Assets.init();
-        //Constants.init();
+        Constants.init();
         display.getFrame().addMouseListener(mouseManager);
         display.getCanvas().addMouseListener(mouseManager);
 
@@ -186,7 +186,7 @@ public class Game implements Runnable{
      * list of local variables:
      * now - the system time in nanosecond when the program is called </type long>
      *
-     * @return whether to start rendering the next frame
+     * @return whether to start rendering the next frame </type boolean>
      */
     private boolean timerCheck(){
         long now = System.nanoTime();
@@ -200,12 +200,11 @@ public class Game implements Runnable{
         }
     }
 
-
-    //getters and setters
-
     /**The setState method
-     * This procedural
-     * @param state
+     * This procedural method switches the current state of
+     * the game.
+     *
+     * @param state the state that the game should be set to
      */
     public void setState(State state){
         mouseManager.setUIManager(state.getUiManager());

@@ -1,57 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f054f86-f43f-4c28-95c7-8a599d37253a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/texture/about_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/about_us_page.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/computer_cobebreaker_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/computer_codebreaker_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/delete_botton.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/easy_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/eight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/exit_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/forward_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/four.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/guess_display_bar.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/hard_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/main_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/medium_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/nine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/one.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/options_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/options_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/play_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/play_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/player_codebreaker_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/player_codebreaker_menu.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/player_vs_player_menu.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/pointer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/pvp_codebreaker_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/rules_about_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/rules_about_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/rules_button.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/rules_page_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/rules_page_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/rules_page_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/seven.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/six.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/ten.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/three.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/texture/two.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/state/MainMenuState.java" afterDir="false" />
+    <list default="true" id="5abf40a8-218e-4670-b9ea-7a5a9b28d05f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Master Mind.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gamelogic/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gfx/Assets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gfx/Assets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/EasyAiState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/EasyAiState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/HardAiState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/HardAiState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/MediumAiState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/MediumAiState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/PVPState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/PVPState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/PlayerDecodeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/PlayerDecodeState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamelogic/Guess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Guess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamelogic/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Score.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,35 +16,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1hurSW2sYYP0R51bgqdJrCN4Kcg" />
+  <component name="ProjectId" id="1jAQB9bQ3YILb9vIIp82FrpMod5" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\terry\programming\Master Mind\res\texture" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\terry\programming\Master Mind\src" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -102,56 +41,30 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Launcher" type="Application" factoryName="Application">
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Launcher" />
       <module name="Master Mind" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Launcher" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0f054f86-f43f-4c28-95c7-8a599d37253a" name="Default Changelist" comment="" />
-      <created>1600871817156</created>
+      <changelist id="5abf40a8-218e-4670-b9ea-7a5a9b28d05f" name="Default Changelist" comment="" />
+      <created>1603244277321</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1600871817156</updated>
-      <workItem from="1600871821055" duration="1225000" />
-      <workItem from="1600951768214" duration="742000" />
-      <workItem from="1601667916357" duration="1747000" />
-      <workItem from="1601669789952" duration="2760000" />
-      <workItem from="1601758871606" duration="14408000" />
-      <workItem from="1601848822369" duration="1952000" />
-      <workItem from="1601854576249" duration="367000" />
-      <workItem from="1601924696772" duration="9153000" />
-      <workItem from="1602089397230" duration="2220000" />
-      <workItem from="1602175364799" duration="1278000" />
-      <workItem from="1602184957184" duration="2237000" />
-      <workItem from="1602187584330" duration="4846000" />
-      <workItem from="1602701168886" duration="10127000" />
-      <workItem from="1602783860848" duration="85000" />
-      <workItem from="1602785545191" duration="599000" />
-      <workItem from="1602797274111" duration="1569000" />
-      <workItem from="1602799058380" duration="2820000" />
-      <workItem from="1602805732865" duration="3690000" />
-      <workItem from="1602809866660" duration="3846000" />
-      <workItem from="1602862986735" duration="601000" />
-      <workItem from="1602868894862" duration="3793000" />
-      <workItem from="1602873006638" duration="5906000" />
-      <workItem from="1602879768849" duration="3038000" />
-      <workItem from="1602967754284" duration="1765000" />
-      <workItem from="1602969726684" duration="268000" />
-      <workItem from="1602970436934" duration="7740000" />
-      <workItem from="1603120826865" duration="2219000" />
-      <workItem from="1603128299743" duration="3676000" />
-      <workItem from="1603215079107" duration="3854000" />
-      <workItem from="1603238392007" duration="3179000" />
-      <workItem from="1603243708028" duration="327000" />
-      <workItem from="1603244056749" duration="13000" />
+      <updated>1603244277321</updated>
+      <workItem from="1603244279316" duration="3260000" />
     </task>
     <servers />
   </component>
@@ -163,9 +76,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>

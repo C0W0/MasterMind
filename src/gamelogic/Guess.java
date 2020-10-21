@@ -1,3 +1,20 @@
+/*=============================================================================
+Code Breaker
+Terry Zha and Jonathan Xie
+October 4, 2020
+Java 13.0.2
+A class that assists the decision making process of Ai
+This class associates the worstCase of each guess, whether the guess is a
+possible answer, and the guess itself together, in order to compare the
+guesses and choose an optimal one
+
+list of global variables:
+worstCase - how many possible answer this guess may lead to </type int>
+guessIsImpossible - is the guess a possible answer </type boolean>
+guess - the guess itself </type int[]>
+===============================================================================
+*/
+
 package gamelogic;
 
 import java.util.ArrayList;
@@ -8,12 +25,13 @@ public class Guess {
     private boolean guessIsImpossible;
     private int[] guess;
 
-    public Guess(int worstCase, boolean guessIsImpossible, int[] guess){
-        this.worstCase = worstCase;
-        this.guessIsImpossible = guessIsImpossible;
-        this.guess = guess;
-    }
-
+    /**The Guess method
+     * The constructor method of the Guess class
+     *
+     * @param worseCase how many possible answer this guess may lead to </type int>
+     * @param guessIsImpossible is the guess a possible answer </type boolean>
+     * @param guess the guess as a String </type String>
+     */
     public Guess(int worseCase, boolean guessIsImpossible, String guess){
         this.worstCase = worseCase;
         this.guessIsImpossible = guessIsImpossible;
@@ -42,10 +60,12 @@ public class Guess {
         }
     }
 
-    public boolean isGuessImpossible() {
-        return guessIsImpossible;
-    }
-
+    /**The getMinimumGuess method
+     * The functional method compares all possible guesses and returns the optimal one
+     *
+     * @param guesses an ArrayList of guesses </type ArrayList>
+     * @return the optimal guess </type int[]>
+     */
     public static int[] getMinimumGuess(ArrayList<Guess> guesses){
         Guess minimumGuess = guesses.get(0);
         for(int i = 1; i < guesses.size(); i++){
@@ -58,7 +78,6 @@ public class Guess {
                     minimumGuess = guesses.get(i);
             }
         }
-//        System.out.println(minimumGuess.worseCase+" "+minimumGuess.guessIsImpossible+" "+Arrays.toString(minimumGuess.guesses));
         return minimumGuess.guess;
     }
 }
