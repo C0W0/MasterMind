@@ -6,6 +6,8 @@ import ui.UIButton;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+import gamelogic.Game;
+
 public class PVPState extends GameState {
 
 
@@ -16,8 +18,8 @@ public class PVPState extends GameState {
     private boolean isDecoding;
 
 
-    public PVPState(){
-        super();
+    public PVPState(Game game){
+        super(game);
         isDecoding = true;
         currentPegs = new BufferedImage[4];
         guessImages = new BufferedImage[4];

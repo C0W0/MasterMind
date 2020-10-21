@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import gamelogic.Game;
 import gamelogic.Score;
 import gfx.Assets;
 import ui.UIButton;
@@ -27,8 +28,8 @@ public class MediumAiState extends GameState {
 
 	protected ArrayList<Integer> choiceList;
 
-	public MediumAiState() {
-		super();
+	public MediumAiState(Game game) {
+		super(game);
 
 		currentPegs= new BufferedImage[4];
 

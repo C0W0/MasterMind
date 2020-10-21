@@ -6,6 +6,7 @@ import ui.UIButton;
 import utils.Constants;
 import utils.Utils;
 
+import gamelogic.Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -17,8 +18,8 @@ public class PlayerDecodeState extends GameState {
     private int[] currentGuess;
     private String code;
 
-    public PlayerDecodeState(){
-        super();
+    public PlayerDecodeState(Game game){
+        super(game);
         guessImages = new BufferedImage[4];
         currentGuess = new int[4];
         uiManager.addUIButton(new UIButton(95, 360, 55, 150, Assets.confirm_button, this::confirmGuess));

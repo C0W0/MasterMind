@@ -1,3 +1,4 @@
+package gamelogic;
 /*==========================================================================================
 Code Breaker
 Terry Zha and Jonathan Xie
@@ -62,7 +63,7 @@ public class Game implements Runnable{
      * @param width the passed-in width of the frame in pixels
      * @param height the passed-in height of the frame in pixels
      */
-    Game(String title, int width, int height){
+    public Game(String title, int width, int height){
         this.title = title;
         this.width = width;
         this.height = height;
@@ -75,16 +76,17 @@ public class Game implements Runnable{
     private void init(){
         display = new Display(title, width, height);
         Assets.init();
-        Constants.init();
+        //Constants.init();
         display.getFrame().addMouseListener(mouseManager);
         display.getCanvas().addMouseListener(mouseManager);
 
+        setState(new MainMenuState(this));
 //        setState(new HardAiState());
 //        setState(new PlayerDecodeState());
 
 //        setState(new MediumAiState());
 //        setState(new EasyAiState());
-        setState(new PVPState());
+//        setState(new PVPState());
 
     }
 
@@ -125,7 +127,7 @@ public class Game implements Runnable{
     }
 
 
-    synchronized void start(){
+    public synchronized void start(){
         if(running){
             return;
         }
