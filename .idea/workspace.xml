@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5abf40a8-218e-4670-b9ea-7a5a9b28d05f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/state/PlayMenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/texture/computer_cobebreaker_button.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/res/texture/computer_codebreaker_button.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/texture/options_button.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/res/texture/options_button.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamelogic/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gfx/Assets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gfx/Assets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/MainMenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/MainMenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +59,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603244277321</updated>
-      <workItem from="1603244279316" duration="3526000" />
+      <workItem from="1603244279316" duration="3661000" />
+      <workItem from="1603303040349" duration="55000" />
+      <workItem from="1603303569285" duration="271000" />
     </task>
     <servers />
   </component>
@@ -77,7 +73,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
