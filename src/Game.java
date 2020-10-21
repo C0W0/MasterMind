@@ -70,7 +70,8 @@ public class Game implements Runnable{
     }
 
     /**The init method
-     * This procedural method is be
+     * This procedural method is called as soon as the game starts.
+     * It initializes all the necessary graphical and data structures
      */
     private void init(){
         display = new Display(title, width, height);
@@ -91,6 +92,16 @@ public class Game implements Runnable{
 
     }
 
+    /**The render method
+     * This procedural method is called 30 times per second to
+     * render images onto screen
+     *
+     * list of local variables:
+     * bufferedStrategy - the mechanism that organizes complex memory on
+     *     a window. It is used to obtain the graphics object to render
+     *     images onto the screen </type BufferStrategy>
+     * graphics - a graphics context for the drawing buffer </type Graphics>
+     */
     private void render(){
         BufferStrategy bufferStrategy = display.getCanvas().getBufferStrategy();
         if(bufferStrategy == null){
@@ -108,6 +119,9 @@ public class Game implements Runnable{
         graphics.dispose();
     }
 
+    /**The run method
+     * This procedural method contains the main loop of the game
+     */
     public void run(){
 
         init();
@@ -123,7 +137,14 @@ public class Game implements Runnable{
         stop();
     }
 
-
+    /**The start method
+     * This synchronized method is used to trigger the main
+     * thread of the game and is called at the beginning of
+     * the program
+     *
+     * list of local variables:
+     * thread - the main thread of the game </type Thread>
+     */
     synchronized void start(){
         if(running){
             return;
@@ -139,6 +160,9 @@ public class Game implements Runnable{
         thread.start();
     }
 
+    /**The stop method
+     * This synchronized method is used to stop the main thread.
+     */
     private synchronized void stop(){
         if(!running){
             return;
@@ -152,6 +176,15 @@ public class Game implements Runnable{
         }
     }
 
+    /**The timerCheck method
+     * This functional method is used to to determine whether the
+     * game should start rendering the next frame on the screen.
+     *
+     * list of local variables:
+     * now - the system time in nanosecond when the program is called </type long>
+     *
+     * @return whether to start rendering the next frame
+     */
     private boolean timerCheck(){
         long now = System.nanoTime();
         delta += (now - lastTime)/timePerUpdate;
@@ -167,6 +200,10 @@ public class Game implements Runnable{
 
     //getters and setters
 
+    /**The setState method
+     * This procedural
+     * @param state
+     */
     public void setState(State state){
         mouseManager.setUIManager(state.getUiManager());
         currentState = state;
