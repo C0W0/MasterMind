@@ -11,9 +11,9 @@ public class MainMenuState extends State{
 		
 		super(game);
 		
-		uiManager.addUIButton(new UIButton(212, 200, 225, 600, Assets.playButton,()->game.setState(new HardAiState(game))));
-		uiManager.addUIButton(new UIButton(212, 450, 225, 600, Assets.rulesAboutButton,()->game.setState(new MediumAiState(game))));
-		
+		uiManager.addUIButton(new UIButton(192, 215, 225, 640, Assets.playButton,()->game.setState(new PlayMenuState(game))));
+		uiManager.addUIButton(new UIButton(192, 455, 165, 450, Assets.rulesAboutButton,()->game.setState(new MediumAiState(game))));
+		uiManager.addUIButton(new UIButton(662, 455, 165, 170, Assets.exitButton,()->System.exit(0)));
 	}
 
 	@Override

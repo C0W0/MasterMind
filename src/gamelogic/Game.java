@@ -78,17 +78,12 @@ public class Game implements Runnable{
         display = new Display(title, width, height);
         Assets.init();
         Constants.init();
+        
+        State.generateStates(this);
         display.getFrame().addMouseListener(mouseManager);
         display.getCanvas().addMouseListener(mouseManager);
-
-        setState(new MainMenuState(this));
-//        setState(new HardAiState());
-//        setState(new PlayerDecodeState());
-
-//        setState(new MediumAiState());
-//        setState(new EasyAiState());
-//        setState(new PVPState());
-
+        
+        setState(State.states[0]);
     }
 
     private void update(){

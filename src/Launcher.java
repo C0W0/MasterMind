@@ -19,7 +19,7 @@ public class Launcher {
      * @param args ...
      */
     public static void main(String[] args){
-        Game game = new Game("Code Breaker", 1024, 768);
+        Game game = new Game("Codebreaker", 1024, 768);
         game.start();
     }
 

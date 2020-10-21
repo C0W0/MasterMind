@@ -8,10 +8,10 @@ public class Assets {
 
     public static BufferedImage empty_slot;
     public static BufferedImage back_button, restart_button, forward_button;
-    public static BufferedImage playButton, rulesAboutButton, exitButton, computerCodebreakerButton, 
-    playerCodebreakerButton, pvpCodebreakerButton, easyButton, mediumButton, hardButton;
+    public static BufferedImage playButton, rulesAboutButton, exitButton, optionsButton, computerCodebreakerButton, 
+    playerCodebreakerButton, pvpCodebreakerButton, easyButton, mediumButton, hardButton, rulesButton, aboutButton;
     public static BufferedImage black_peg_button, white_peg_button;
-    public static BufferedImage peg_black, peg_white, yes, no;
+    public static BufferedImage peg_black, peg_white;
     public static BufferedImage confirm_button, delete_button;
     public static BufferedImage aiGameboard, playerGameboard, pvpGameboard;
     public static BufferedImage mainMenu,playMenu,computerCodebreakerMenu,rulesAboutMenu,aboutUsPage;
@@ -31,12 +31,12 @@ public class Assets {
         peg_black = loadImage("/texture/black.png");
         peg_white = loadImage("/texture/white.png");
         empty_slot = loadImage("/texture/brown.png");
-        yes = loadImage("/texture/yes.png");
-        no = loadImage("/texture/no.png");
+        
         emptyGameBoard = loadImage("/texture/empty_gameboard_background.png");
         aiGameboard = loadImage("/texture/computer_codebreaker_board.png");
         playerGameboard = loadImage("/texture/player_codebreaker_board.png");
         pvpGameboard = loadImage("/texture/pvp_codebreaker_board.png");
+        
         back_button = loadImage("/texture/back_button.png");
         restart_button = loadImage("/texture/restart_button.png");
         black_peg_button = loadImage("/texture/black_peg_button.png");
@@ -49,9 +49,18 @@ public class Assets {
         rulesAboutButton = loadImage("/texture/rules_about_button.png");
         exitButton = loadImage("/texture/exit_button.png");
         
+        optionsButton = loadImage("/texture/options_button.png");
+        playerCodebreakerButton = loadImage("/texture/player_codebreaker_button.png");
+        computerCodebreakerButton = loadImage("/texture/computer_codebreaker_button.png");
+        pvpCodebreakerButton = loadImage("/texture/pvp_codebreaker_button.png");
+
+        easyButton = loadImage("/texture/easy_button.png");
+        mediumButton = loadImage("/texture/medium_button.png");
+        hardButton = loadImage("/texture/hard_button.png");
         
-        
-        
+        rulesButton = loadImage("/texture/rules_button.png");
+        aboutButton = loadImage("/texture/about_button.png");
+
         mainMenu = loadImage("/texture/main_menu.png");
         playMenu = loadImage("/texture/play_menu.png");
         computerCodebreakerMenu = loadImage("/texture/computer_codebreaker_menu.png");
