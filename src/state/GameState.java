@@ -2,6 +2,7 @@ package state;
 
 import gfx.Assets;
 import ui.UIButton;
+import gamelogic.Game;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -16,7 +17,8 @@ public abstract class GameState extends State{
     //control
     protected boolean isGameActive;
 
-    GameState(){
+    GameState(Game game){
+    	super(game);
         panel = new BufferedImage[10][4];
         allPegs = new BufferedImage[10][4];
         code = new BufferedImage[4];

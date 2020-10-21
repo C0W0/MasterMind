@@ -1,9 +1,9 @@
 package state;
-
+import gamelogic.Game;
 public class EasyAiState extends MediumAiState {
 
-    public EasyAiState(){
-        super();
+    public EasyAiState(Game game){
+        super(game);
     }
 
     @Override

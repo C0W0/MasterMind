@@ -1,5 +1,6 @@
 package state;
 
+import gamelogic.Game;
 import gamelogic.Guess;
 import gamelogic.Score;
 import gfx.Assets;
@@ -29,8 +30,8 @@ public class HardAiState extends GameState {
     private ArrayList<String> possibleAnswers;
     private HashMap<String, HashMap<String, Score>> allScores, possibleScores;
 
-    public HardAiState(){
-        super();
+    public HardAiState(Game game){
+        super(game);
         currentPegs = new BufferedImage[4];
         uiManager.addUIButton(new UIButton(90, 270, 55, 55, Assets.black_peg_button, this::incrementBlackPegs));
         uiManager.addUIButton(new UIButton(155, 270, 55, 55, Assets.white_peg_button, this::incrementWhitePegs));

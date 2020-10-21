@@ -2,8 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f054f86-f43f-4c28-95c7-8a599d37253a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/res/texture/about_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/about_us_page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/computer_cobebreaker_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/computer_codebreaker_menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/delete_botton.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/easy_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/eight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/exit_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/forward_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/four.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/guess_display_bar.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/hard_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/main_menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/medium_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/nine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/one.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/options_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/options_menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/play_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/play_menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/player_codebreaker_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/player_codebreaker_menu.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/player_vs_player_menu.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/pointer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/pvp_codebreaker_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/rules_about_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/rules_about_menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/rules_button.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/rules_page_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/rules_page_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/rules_page_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/seven.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/six.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/ten.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/three.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/texture/two.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/state/MainMenuState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Master Mind.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamelogic/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gfx/Assets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gfx/Assets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/EasyAiState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/EasyAiState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/HardAiState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/HardAiState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/MediumAiState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/MediumAiState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/PVPState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/PVPState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/PlayerDecodeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/PlayerDecodeState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/State.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +150,8 @@
       <workItem from="1603128299743" duration="3676000" />
       <workItem from="1603215079107" duration="3854000" />
       <workItem from="1603238392007" duration="3179000" />
+      <workItem from="1603243708028" duration="327000" />
+      <workItem from="1603244056749" duration="13000" />
     </task>
     <servers />
   </component>
