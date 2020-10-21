@@ -81,8 +81,10 @@ public class Game implements Runnable{
 
 //        setState(new HardAiState());
 //        setState(new PlayerDecodeState());
-        setState(new MediumAiState());
+
+//        setState(new MediumAiState());
 //        setState(new EasyAiState());
+        setState(new PVPState());
 
     }
 
