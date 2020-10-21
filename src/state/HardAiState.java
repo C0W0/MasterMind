@@ -37,6 +37,7 @@ public class HardAiState extends GameState {
         uiManager.addUIButton(new UIButton(155, 270, 55, 55, Assets.white_peg_button, this::incrementWhitePegs));
         uiManager.addUIButton(new UIButton(90, 350, 55, 150, Assets.confirm_button, this::confirmScore));
         uiManager.addUIButton(new UIButton(265, 350, 55, 150, Assets.delete_button, this::removeScore));
+        uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.back_button, ()->game.setState(State.states[2])));
     }
 
     @Override

@@ -22,12 +22,11 @@ public abstract class GameState extends State{
         panel = new BufferedImage[10][4];
         allPegs = new BufferedImage[10][4];
         code = new BufferedImage[4];
-        uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.back_button, ()->{} /*back to menu*/));
         uiManager.addUIButton(new UIButton(135, 648, 90, 90, Assets.restart_button, this::init));
         cornerWidth = (int)(1020.f/2000*1024);
         cornerHeight = (int)(1170.f/1428*768);
         isGameActive = false;
-    }
+    }	
 
     @Override
     public void render(Graphics graphics) {
