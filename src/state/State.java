@@ -31,15 +31,15 @@ public abstract class State {
     	states[0]= new MainMenuState(game);
     	states[1]= new PlayMenuState(game);
     	states[2]= new ComputerCodebreakerMenuState(game);
-    	//states[3]= new OptionsMenuState(game);
+    	states[3]= new OptionsMenuState(game);
     	states[4]= new PlayerDecodeState(game);
     	states[5]= new EasyAiState(game);
     	states[6]= new MediumAiState(game);
     	states[7]= new HardAiState(game);
     	states[8]= new PVPState(game);
     	states[9]= new RulesAboutMenuState(game);
-    	//states[10]= new RulesState(game);
-    	//states[11]= new AboutUsState(game);
+    	states[10]= new RulesState(game);
+    	states[11]= new AboutUsState(game);
     	
     }
     

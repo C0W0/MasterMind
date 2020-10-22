@@ -12,8 +12,8 @@ public class RulesAboutMenuState extends State{
 		super(game);
 		
 		uiManager.addUIButton(new UIButton(670, 16, 90, 90, Assets.back_button,()->game.setState(State.states[0])));
-		uiManager.addUIButton(new UIButton(100, 155, 245, 400, Assets.rulesButton,()->game.setState(State.states[10])));
-		uiManager.addUIButton(new UIButton(520, 155, 245, 400, Assets.aboutButton,()->game.setState(State.states[11])));
+		uiManager.addUIButton(new UIButton(95, 155, 245, 400, Assets.rulesButton,()->game.setState(State.states[10])));
+		uiManager.addUIButton(new UIButton(530, 155, 246, 400, Assets.aboutButton,()->game.setState(State.states[11])));
 	}
 
 	@Override
