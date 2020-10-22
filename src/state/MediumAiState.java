@@ -229,7 +229,7 @@ public class MediumAiState extends GameState {
 	}
 
 
-	protected int getScore(int index) {
+	private int getScore(int index) {
 		
 		int count=0;
 		

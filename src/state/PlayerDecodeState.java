@@ -59,7 +59,7 @@ public class PlayerDecodeState extends GameState {
         if(!isGameActive)
             return;
         addAllColourImages(panel, guessImages);
-        String guess = Utils.ColourCombination.toStringColour(currentGuess);
+        String guess = Utils.toStringColour(currentGuess);
         Score score = Constants.possibleScores.get(guess).get(code);
         BufferedImage[] scoreImage = new BufferedImage[4];
         for(int i = 0; i < score.getBlackPeg(); i++)
@@ -70,7 +70,7 @@ public class PlayerDecodeState extends GameState {
 
         emptyCurrentGuess();
         if(score.isDecoded()){
-            showCode(Utils.ColourCombination.toIntArrayColour(code));
+            showCode(Utils.toIntArrayColour(code));
             isGameActive = false;
             return;
         } else if(numberOfGuesses >= 10){

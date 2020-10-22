@@ -3,6 +3,7 @@ package utils;
 import gamelogic.Score;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Constants {
@@ -22,15 +23,20 @@ public class Constants {
      * colours
      *
      * list of local variables:
-     * line - a HashMap that associates the score with one of the two
-     *      combinations of colour </type HashMap>
+     * allScore - the score section of the guess-code-score matrix read
+     *      from a pre-stored file </type ArrayList>
+     * line - a line in the guess-code-score matrix </type HashMap>
+     * codeToScore -  a line of scores in the guess-code-score matrix </type String[]>
+     * score - a score represented by a 2-digit String number. </type String[]>
      */
     private static void generateScore(){
+        ArrayList<String> allScores = Utils.loadFileAsArrayList("res/data/scores.txt");
         for(int y = 0; y < 1296; y++){
             HashMap<String, Score> line = new HashMap<>();
+            String[] codeToScore = allScores.get(y).split("\\s+");
             for(int x = 0; x < 1296; x++){
-                line.put(allStringCombinations.get(x), Utils.ColourCombination.match(allStringCombinations.get(y), allStringCombinations.get(x)));
-                //allCombinations.get(y).match(allCombinations.get(x))
+                String[] score = codeToScore[x].split("");
+                line.put(allStringCombinations.get(x), new Score(Integer.parseInt(score[0]), Integer.parseInt(score[1])));
             }
             possibleScores.put(allStringCombinations.get(y), line);
         }
@@ -38,19 +44,10 @@ public class Constants {
 
     /**generateAllCombinations method
      * This procedural method fills the global variable possibleCombinations
-     * with all possible combination of colour
-     *
-     * list of local variables:
-     * cc - a ColourCombination of many possible combinations </type ColourCombination>
+     * with all possible combination of colour from the file permutations.txt
      */
     private static void generateAllCombinations(){
-        for(int i1 = 0; i1 < 6; i1++)
-            for(int i2 = 0; i2 < 6; i2++)
-                for(int i3 = 0; i3 < 6; i3++)
-                    for(int i4 = 0; i4 < 6; i4++){
-                        int[] intColourCombination = new int[]{i1, i2, i3, i4};
-                        allStringCombinations.add(Utils.ColourCombination.toStringColour(intColourCombination));
-                    }
+        allStringCombinations.addAll(Arrays.asList(Utils.loadFileAsString("res/data/permutations.txt").split("\\s+")));
     }
 
 

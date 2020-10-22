@@ -57,7 +57,7 @@ public class HardAiState extends GameState {
         }
 
         int[] guess = makeGuesses();
-        lastGuess = Utils.ColourCombination.toStringColour(guess);
+        lastGuess = Utils.toStringColour(guess);
         panel[numberOfGuesses] = toColour(guess);
     }
 
@@ -77,7 +77,7 @@ public class HardAiState extends GameState {
         removeScore();
         numberOfGuesses ++;
         if(lastScore.isDecoded()){
-            showCode(Utils.ColourCombination.toIntArrayColour(lastGuess));
+            showCode(Utils.toIntArrayColour(lastGuess));
             isGameActive = false;
             return;
         }else if(numberOfGuesses > 10){
@@ -86,7 +86,7 @@ public class HardAiState extends GameState {
             return;
         }
         int[] guess = makeGuesses();
-        lastGuess = Utils.ColourCombination.toStringColour(guess);
+        lastGuess = Utils.toStringColour(guess);
         panel[numberOfGuesses] = toColour(guess);
     }
 

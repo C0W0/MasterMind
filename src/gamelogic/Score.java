@@ -50,6 +50,10 @@ public class Score{
         return builder.toString();
     }
 
+    public String toNumString(){
+        return Integer.toString(blackPeg)+whitePeg;
+    }
+
     /**The getBlackPeg method
      * This functional method returns the number of black pegs of the score
      *
