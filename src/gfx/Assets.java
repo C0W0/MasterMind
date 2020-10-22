@@ -6,12 +6,12 @@ import java.io.IOException;
 
 public class Assets {
 
-    public static BufferedImage empty_slot, pointer;
-    public static BufferedImage back_button, restart_button, forward_button;
+    public static BufferedImage emptySlot, pointer;
+    public static BufferedImage backButton, restartButton, forwardButton;
     public static BufferedImage playButton, rulesAboutButton, exitButton, optionsButton, computerCodebreakerButton, 
     playerCodebreakerButton, pvpCodebreakerButton, easyButton, mediumButton, hardButton, rulesButton, aboutButton;
-    public static BufferedImage black_peg_button, white_peg_button;
-    public static BufferedImage peg_black, peg_white;
+    public static BufferedImage blackPegButton, whitePegButton;
+    public static BufferedImage pegBlack, pegWhite;
     public static BufferedImage confirm_button, delete_button;
     public static BufferedImage aiGameboard, playerGameboard, pvpGameboard;
     public static BufferedImage mainMenu,playMenu,computerCodebreakerMenu,rulesAboutMenu,aboutUsPage,optionsMenu;
@@ -28,9 +28,9 @@ public class Assets {
         colours[4] = loadImage("/texture/red.png");
         colours[5] = loadImage("/texture/yellow.png");
         
-        peg_black = loadImage("/texture/black.png");
-        peg_white = loadImage("/texture/white.png");
-        empty_slot = loadImage("/texture/brown.png");
+        pegBlack = loadImage("/texture/black.png");
+        pegWhite = loadImage("/texture/white.png");
+        emptySlot = loadImage("/texture/brown.png");
         pointer = loadImage("/texture/pointer.png");
 
         emptyGameBoard = loadImage("/texture/empty_gameboard_background.png");
@@ -38,13 +38,13 @@ public class Assets {
         playerGameboard = loadImage("/texture/player_codebreaker_board.png");
         pvpGameboard = loadImage("/texture/pvp_codebreaker_board.png");
         
-        back_button = loadImage("/texture/back_button.png");
-        restart_button = loadImage("/texture/restart_button.png");
-        black_peg_button = loadImage("/texture/black_peg_button.png");
-        white_peg_button = loadImage("/texture/white_peg_button.png");
+        backButton = loadImage("/texture/back_button.png");
+        restartButton = loadImage("/texture/restart_button.png");
+        blackPegButton = loadImage("/texture/black_peg_button.png");
+        whitePegButton = loadImage("/texture/white_peg_button.png");
         confirm_button = loadImage("/texture/confirm_button.png");
         delete_button = loadImage("/texture/delete_button.png");
-        forward_button = loadImage("/texture/forward_button.png");
+        forwardButton = loadImage("/texture/forward_button.png");
         
         playButton = loadImage("/texture/play_button.png");
         rulesAboutButton = loadImage("/texture/rules_about_button.png");

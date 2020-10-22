@@ -150,7 +150,7 @@ public class Game implements Runnable{
 
         running = true;
 
-        timePerUpdate = 1e9/30;
+        timePerUpdate = 1e9/45;
         delta = 0;
         lastTime = System.nanoTime();
 

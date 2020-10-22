@@ -24,7 +24,7 @@ public class PlayerDecodeState extends GameState {
         currentGuess = new int[4];
         uiManager.addUIButton(new UIButton(95, 360, 55, 150, Assets.confirm_button, this::confirmGuess));
         uiManager.addUIButton(new UIButton(270, 360, 55, 150, Assets.delete_button, this::emptyCurrentGuess));
-        uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.back_button, ()->game.setState(State.states[1])));
+        uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.backButton, ()->game.setState(State.states[1])));
 
         for(int i = 0; i < 6; i++) {
             int colour = i;
@@ -35,8 +35,23 @@ public class PlayerDecodeState extends GameState {
     @Override
     protected void start() {
         numberOfGuesses = 0;
-        code = Constants.allStringCombinations.get((int)(Math.random()*1296));
+        do{
+            code = Constants.allStringCombinations.get((int)(Math.random()*1296));
+        }while (getNumberOfDuplicate(code) > dupColour);
+
         System.out.println(code);
+        System.out.println(getNumberOfDuplicate(code));
+    }
+
+    private int getNumberOfDuplicate(String code){
+        int[] intCode = Utils.toIntArrayColour(code);
+        int[] colourCount = new int[6];
+        for(int i: intCode)
+            colourCount[i] = colourCount[i]+1;
+        int max = 0;
+        for(int i: colourCount)
+            max = Math.max(max, i);
+        return max;
     }
 
     @Override
@@ -56,16 +71,16 @@ public class PlayerDecodeState extends GameState {
     }
 
     private void confirmGuess(){
-        if(!isGameActive)
+        if(!isGameActive || guessImages[3] == null)
             return;
         addAllColourImages(panel, guessImages);
         String guess = Utils.toStringColour(currentGuess);
         Score score = Constants.possibleScores.get(guess).get(code);
         BufferedImage[] scoreImage = new BufferedImage[4];
         for(int i = 0; i < score.getBlackPeg(); i++)
-            scoreImage[i] = Assets.peg_black;
+            scoreImage[i] = Assets.pegBlack;
         for(int i = score.getBlackPeg(); i < score.getBlackPeg()+score.getWhitePeg(); i++)
-            scoreImage[i] = Assets.peg_white;
+            scoreImage[i] = Assets.pegWhite;
         addAllColourImages(allPegs, scoreImage);
 
         emptyCurrentGuess();
@@ -73,7 +88,7 @@ public class PlayerDecodeState extends GameState {
             showCode(Utils.toIntArrayColour(code));
             isGameActive = false;
             return;
-        } else if(numberOfGuesses >= 10){
+        } else if(numberOfGuesses == maxGuess-1){
             System.out.println("Player lost");
             isGameActive = false;
             return;
