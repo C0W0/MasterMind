@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Assets {
 
-    public static BufferedImage empty_slot;
+    public static BufferedImage empty_slot, pointer;
     public static BufferedImage back_button, restart_button, forward_button;
     public static BufferedImage playButton, rulesAboutButton, exitButton, optionsButton, computerCodebreakerButton, 
     playerCodebreakerButton, pvpCodebreakerButton, easyButton, mediumButton, hardButton, rulesButton, aboutButton;
@@ -14,7 +14,7 @@ public class Assets {
     public static BufferedImage peg_black, peg_white;
     public static BufferedImage confirm_button, delete_button;
     public static BufferedImage aiGameboard, playerGameboard, pvpGameboard;
-    public static BufferedImage mainMenu,playMenu,computerCodebreakerMenu,rulesAboutMenu,aboutUsPage;
+    public static BufferedImage mainMenu,playMenu,computerCodebreakerMenu,rulesAboutMenu,aboutUsPage,optionsMenu;
     public static BufferedImage emptyGameBoard;
     public static BufferedImage[] colours, rulesPages, numberButtons;
 
@@ -31,7 +31,8 @@ public class Assets {
         peg_black = loadImage("/texture/black.png");
         peg_white = loadImage("/texture/white.png");
         empty_slot = loadImage("/texture/brown.png");
-        
+        pointer = loadImage("/texture/pointer.png");
+
         emptyGameBoard = loadImage("/texture/empty_gameboard_background.png");
         aiGameboard = loadImage("/texture/computer_codebreaker_board.png");
         playerGameboard = loadImage("/texture/player_codebreaker_board.png");
@@ -63,9 +64,11 @@ public class Assets {
 
         mainMenu = loadImage("/texture/main_menu.png");
         playMenu = loadImage("/texture/play_menu.png");
+        optionsMenu = loadImage("/texture/options_menu.png");
         computerCodebreakerMenu = loadImage("/texture/computer_codebreaker_menu.png");
         rulesAboutMenu = loadImage("/texture/rules_about_menu.png");
         aboutUsPage = loadImage("/texture/about_us_page.png");
+        
         
         rulesPages = new BufferedImage[3];
         rulesPages[0] = loadImage("/texture/rules_page_1.png");
