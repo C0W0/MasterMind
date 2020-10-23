@@ -33,11 +33,11 @@ public class MediumAiState extends GameState {
 
 		currentPegs= new BufferedImage[4];
 
-		uiManager.addUIButton(new UIButton(90, 270, 55, 55, Assets.black_peg_button, this::incrementBlackPegs));
-		uiManager.addUIButton(new UIButton(155, 270, 55, 55, Assets.white_peg_button, this::incrementWhitePegs));
-		uiManager.addUIButton(new UIButton(90, 350, 55, 150, Assets.confirm_button, this::confirmFeedback));
-		uiManager.addUIButton(new UIButton(265, 350, 55, 150, Assets.delete_button, this::removeFeedback));
-        uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.back_button, ()->game.setState(State.states[2])));
+		uiManager.addUIButton(new UIButton(90, 270, 55, 55, Assets.blackPegButton, this::incrementBlackPegs));
+		uiManager.addUIButton(new UIButton(155, 270, 55, 55, Assets.whitePegButton, this::incrementWhitePegs));
+		uiManager.addUIButton(new UIButton(90, 350, 55, 150, Assets.confirmButton, this::confirmFeedback));
+		uiManager.addUIButton(new UIButton(265, 350, 55, 150, Assets.deleteButton, this::removeFeedback));
+        uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.backButton, ()->game.setState(State.states[2])));
 
 		choiceList = new ArrayList<>();
 		guess = new int[4];
@@ -79,7 +79,7 @@ public class MediumAiState extends GameState {
             for(int i = 0; i < 4; i++){
                 if(currentPegs[i] == null){
                     blackPegCount++;
-                    currentPegs[i] = Assets.peg_black;
+                    currentPegs[i] = Assets.pegBlack;
                     return;
                 }
             }
@@ -90,7 +90,7 @@ public class MediumAiState extends GameState {
             for(int i = 0; i < 4; i++){
                 if(currentPegs[i] == null){
                     whitePegCount++;
-                    currentPegs[i] = Assets.peg_white;
+                    currentPegs[i] = Assets.pegWhite;
                     return;
                 }
             }
@@ -106,9 +106,9 @@ public class MediumAiState extends GameState {
 
 		BufferedImage[] pegsImage = new BufferedImage[4];
 		for(int i = 0; i < blackPegCount; i++)
-			pegsImage[i] = Assets.peg_black;
+			pegsImage[i] = Assets.pegBlack;
 		for(int i = blackPegCount; i < blackPegCount+whitePegCount; i++)
-			pegsImage[i] = Assets.peg_white;
+			pegsImage[i] = Assets.pegWhite;
 
 		if(numberOfGuesses != 0)
 			addAllColourImages(allPegs, pegsImage);

@@ -11,9 +11,9 @@ public class ComputerCodebreakerMenuState extends State{
 		
 		super(game);
 		
-		uiManager.addUIButton(new UIButton(670, 16, 90, 90, Assets.back_button,()->game.setState(State.states[1])));
+		uiManager.addUIButton(new UIButton(670, 16, 90, 90, Assets.backButton,()->game.setState(State.states[1])));
 		uiManager.addUIButton(new UIButton(60, 150, 165, 515, Assets.easyButton,()->game.setState(State.states[5])));
-		uiManager.addUIButton(new UIButton(435, 325, 165, 515, Assets.mediumButton,()->game.setState(State.states[6])));
+		uiManager.addUIButton(new UIButton(437, 325, 165, 515, Assets.mediumButton,()->game.setState(State.states[6])));
 		uiManager.addUIButton(new UIButton(60, 508, 160, 515, Assets.hardButton,()->game.setState(State.states[7])));
 	}
 

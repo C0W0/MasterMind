@@ -23,14 +23,14 @@ public class RulesState extends State{
 			rulesPages[i] = Assets.rulesPages[i];
 		
 		
-		uiManager.addUIButton(new UIButton(50, 32, 90, 90, Assets.back_button,()->{
+		uiManager.addUIButton(new UIButton(50, 32, 90, 90, Assets.backButton,()->{
 			if(count==0)
 				game.setState(State.states[9]);
 			else
 				count--;
 		} ));
 
-		uiManager.addUIButton(new UIButton(884, 32, 90, 90, Assets.forward_button,()-> count= count<2? count+1:count));
+		uiManager.addUIButton(new UIButton(884, 32, 90, 90, Assets.forwardButton,()-> count= count<2? count+1:count));
 
 
 	}

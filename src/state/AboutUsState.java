@@ -11,7 +11,7 @@ public class AboutUsState extends State{
 		
 		super(game);
 		
-		uiManager.addUIButton(new UIButton(670, 16, 90, 90, Assets.back_button,()->game.setState(State.states[9])));
+		uiManager.addUIButton(new UIButton(670, 16, 90, 90, Assets.backButton,()->game.setState(State.states[9])));
 	}
 
 	@Override

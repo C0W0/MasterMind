@@ -11,7 +11,7 @@ public class PlayMenuState extends State{
 		
 		super(game);
 		
-		uiManager.addUIButton(new UIButton(525, 20, 90, 90, Assets.back_button,()->game.setState(State.states[0])));
+		uiManager.addUIButton(new UIButton(525, 20, 90, 90, Assets.backButton,()->game.setState(State.states[0])));
 		uiManager.addUIButton(new UIButton(640, 25, 80, 350, Assets.optionsButton,()->game.setState(State.states[3])));
 		uiManager.addUIButton(new UIButton(55, 150, 175, 535, Assets.playerCodebreakerButton,()->game.setState(State.states[4])));
 		uiManager.addUIButton(new UIButton(435, 325, 175, 535, Assets.computerCodebreakerButton,()->game.setState(State.states[2])));

@@ -22,9 +22,9 @@ public class PlayerDecodeState extends GameState {
         super(game);
         guessImages = new BufferedImage[4];
         currentGuess = new int[4];
-        uiManager.addUIButton(new UIButton(95, 360, 55, 150, Assets.confirm_button, this::confirmGuess));
-        uiManager.addUIButton(new UIButton(270, 360, 55, 150, Assets.delete_button, this::emptyCurrentGuess));
-        uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.back_button, ()->game.setState(State.states[1])));
+        uiManager.addUIButton(new UIButton(95, 360, 55, 150, Assets.confirmButton, this::confirmGuess));
+        uiManager.addUIButton(new UIButton(270, 360, 55, 150, Assets.deleteButton, this::emptyCurrentGuess));
+        uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.backButton, ()->game.setState(State.states[1])));
 
         for(int i = 0; i < 6; i++) {
             int colour = i;
@@ -63,9 +63,9 @@ public class PlayerDecodeState extends GameState {
         Score score = Constants.possibleScores.get(guess).get(code);
         BufferedImage[] scoreImage = new BufferedImage[4];
         for(int i = 0; i < score.getBlackPeg(); i++)
-            scoreImage[i] = Assets.peg_black;
+            scoreImage[i] = Assets.pegBlack;
         for(int i = score.getBlackPeg(); i < score.getBlackPeg()+score.getWhitePeg(); i++)
-            scoreImage[i] = Assets.peg_white;
+            scoreImage[i] = Assets.pegWhite;
         addAllColourImages(allPegs, scoreImage);
 
         emptyCurrentGuess();
