@@ -33,7 +33,7 @@ public abstract class GameState extends State{
 
     @Override
     public void render(Graphics graphics) {
-        graphics.drawImage(Assets.emptyGameBoard, 0, 0, 1024, 768, null);
+        graphics.drawImage(Assets.emptyGameboard, 0, 0, 1024, 768, null);
 
         for(int y = 0; y < panel.length; y++){
             for(int x = 0; x < panel[y].length; x++){

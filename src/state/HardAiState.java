@@ -35,8 +35,9 @@ public class HardAiState extends GameState {
         currentPegs = new BufferedImage[4];
         uiManager.addUIButton(new UIButton(90, 270, 55, 55, Assets.blackPegButton, this::incrementBlackPegs));
         uiManager.addUIButton(new UIButton(155, 270, 55, 55, Assets.whitePegButton, this::incrementWhitePegs));
-        uiManager.addUIButton(new UIButton(90, 350, 55, 150, Assets.confirm_button, this::confirmScore));
-        uiManager.addUIButton(new UIButton(265, 350, 55, 150, Assets.delete_button, this::removeScore));
+        uiManager.addUIButton(new UIButton(90, 350, 55, 150, Assets.confirmButton, this::confirmScore));
+        uiManager.addUIButton(new UIButton(265, 350, 55, 150, Assets.deleteButton, this::removeScore));
+
         uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.backButton, ()->game.setState(State.states[2])));
     }
 

@@ -29,13 +29,13 @@ public class PVPState extends GameState {
             int colour = i;
             uiManager.addUIButton(new UIButton(100+55*i, 180, 30, 30, Assets.colours[i], () -> addGuessColour(colour)));
         }
-        uiManager.addUIButton(new UIButton(90, 315, 55, 150, Assets.confirm_button, this::confirmGuess));
-        uiManager.addUIButton(new UIButton(265, 315, 55, 150, Assets.delete_button, this::clearGuess));
+        uiManager.addUIButton(new UIButton(90, 315, 55, 150, Assets.confirmButton, this::confirmGuess));
+        uiManager.addUIButton(new UIButton(265, 315, 55, 150, Assets.deleteButton, this::clearGuess));
         
         uiManager.addUIButton(new UIButton(90, 456, 55, 55, Assets.blackPegButton, this::incrementBlackPegs));
         uiManager.addUIButton(new UIButton(155, 456, 55, 55, Assets.whitePegButton, this::incrementWhitePegs));
-        uiManager.addUIButton(new UIButton(90, 540, 55, 150, Assets.confirm_button, this::confirmScore));
-        uiManager.addUIButton(new UIButton(265, 540, 55, 150, Assets.delete_button, this::clearScore));
+        uiManager.addUIButton(new UIButton(90, 540, 55, 150, Assets.confirmButton, this::confirmScore));
+        uiManager.addUIButton(new UIButton(265, 540, 55, 150, Assets.deleteButton, this::clearScore));
         
         uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.backButton, ()->game.setState(State.states[1])));
         
