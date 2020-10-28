@@ -1,3 +1,4 @@
+
 package state;
 
 import gamelogic.Score;
@@ -12,7 +13,6 @@ import java.awt.image.BufferedImage;
 
 public class PlayerDecodeState extends GameState {
 
-    private int numberOfGuesses;
     private int numberOfGuessColour;
     private BufferedImage[] guessImages;
     private int[] currentGuess;
@@ -60,6 +60,11 @@ public class PlayerDecodeState extends GameState {
         for(int i = 0; i < 4; i++)
             if(guessImages[i] != null)
                 graphics.drawImage(guessImages[i], 160+55*i, 300, 30, 30, null);
+    }
+
+    @Override
+    protected void messageRender(Graphics graphics) {
+
     }
 
     private void addGuessColour(int colour){

@@ -56,12 +56,12 @@ public class Game implements Runnable{
     //state
     private State currentState;
 
-    /**The Game method
+    /**Game method
      * The constructor method of the Game class
      *
-     * @param title the passed-in title of the frame
-     * @param width the passed-in width of the frame in pixels
-     * @param height the passed-in height of the frame in pixels
+     * @param title - the passed-in title of the frame </type String>
+     * @param width - the passed-in width of the frame in pixels </type int>
+     * @param height - the passed-in height of the frame in pixels </type int>
      */
     public Game(String title, int width, int height){
         this.title = title;
@@ -70,7 +70,7 @@ public class Game implements Runnable{
         mouseManager = new MouseManager();
     }
 
-    /**The init method
+    /**init method
      * This procedural method is called as soon as the game starts.
      * It initializes all the necessary graphical and data structures
      */
@@ -86,19 +86,15 @@ public class Game implements Runnable{
         setState(State.states[0]);
     }
 
-    private void update(){
-
-    }
-
-    /**The render method
-     * This procedural method is called 30 times per second to
+    /**render method
+     * This procedural method is called 45 times per second to
      * render images onto screen
      *
      * list of local variables:
      * bufferedStrategy - the mechanism that organizes complex memory on
      *     a window. It is used to obtain the graphics object to render
      *     images onto the screen </type BufferStrategy>
-     * graphics - a graphics context for the drawing buffer </type Graphics>
+     * graphics - a graphics context for drawing buffer </type Graphics>
      */
     private void render(){
         BufferStrategy bufferStrategy = display.getCanvas().getBufferStrategy();
@@ -117,7 +113,7 @@ public class Game implements Runnable{
         graphics.dispose();
     }
 
-    /**The run method
+    /**run method
      * This procedural method contains the main loop of the game
      */
     public void run(){
@@ -127,7 +123,6 @@ public class Game implements Runnable{
         while(running){
 
             if (timerCheck()){
-                update();
                 render();
             }
 
@@ -135,7 +130,7 @@ public class Game implements Runnable{
         stop();
     }
 
-    /**The start method
+    /**start method
      * This synchronized method is used to trigger the main
      * thread of the game and is called at the beginning of
      * the program
@@ -158,7 +153,7 @@ public class Game implements Runnable{
         thread.start();
     }
 
-    /**The stop method
+    /**stop method
      * This synchronized method is used to stop the main thread.
      */
     private synchronized void stop(){
@@ -174,7 +169,7 @@ public class Game implements Runnable{
         }
     }
 
-    /**The timerCheck method
+    /**timerCheck method
      * This functional method is used to to determine whether the
      * game should start rendering the next frame on the screen.
      *
@@ -195,11 +190,11 @@ public class Game implements Runnable{
         }
     }
 
-    /**The setState method
+    /**setState method
      * This procedural method switches the current state of
      * the game.
      *
-     * @param state the state that the game should be set to
+     * @param state - the state that the game should be set to
      */
     public void setState(State state){
         mouseManager.setUIManager(state.getUiManager());

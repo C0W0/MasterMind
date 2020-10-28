@@ -3,8 +3,8 @@ Code Breaker
 Terry Zha and Jonathan Xie
 October 4, 2020
 Java 13.0.2
-A class that assists the decision making process of Ai
-This class associates the worstCase of each guess, whether the guess is a
+The objects created from this class assists the decision making process of Ai
+A Guess object associates the worstCase of each guess, whether the guess is a
 possible answer, and the guess itself together, in order to compare the
 guesses and choose an optimal one
 
@@ -25,12 +25,12 @@ public class Guess {
     private boolean guessIsImpossible;
     private int[] guess;
 
-    /**The Guess method
+    /**Guess method
      * The constructor method of the Guess class
      *
-     * @param worseCase how many possible answer this guess may lead to </type int>
-     * @param guessIsImpossible is the guess a possible answer </type boolean>
-     * @param guess the guess as a String </type String>
+     * @param worseCase - how many possible answer this guess may lead to </type int>
+     * @param guessIsImpossible - is the guess a possible answer </type boolean>
+     * @param guess - the guess as a String </type String>
      */
     public Guess(int worseCase, boolean guessIsImpossible, String guess){
         this.worstCase = worseCase;
@@ -60,11 +60,15 @@ public class Guess {
         }
     }
 
-    /**The getMinimumGuess method
-     * The functional method compares all possible guesses and returns the optimal one
+    /**getMinimumGuess method
+     * This functional method compares all possible guesses and returns the optimal one
      *
-     * @param guesses an ArrayList of guesses </type ArrayList>
-     * @return the optimal guess </type int[]>
+     * list of local variables:
+     * minimumGuess - the optimal guess being updated by searching through the
+     *      ArrayList </type Guess>
+     *
+     * @param guesses - an ArrayList of guesses </type ArrayList>
+     * @return minimumGuess.guess - the optimal guess </type int[]>
      */
     public static int[] getMinimumGuess(ArrayList<Guess> guesses){
         Guess minimumGuess = guesses.get(0);

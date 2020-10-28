@@ -17,7 +17,7 @@ public class MediumAiState extends GameState {
 	private boolean generated = false;
 	private boolean firstGuess = true;
 	
-	private int numberOfGuesses,coloursFound;
+	private int coloursFound;
 	protected int choice;
 
 	protected int[] guess;
@@ -70,6 +70,11 @@ public class MediumAiState extends GameState {
 		for(int i=0; i<currentPegs.length; i++) //draws black/white pegs (during selection)
 			if(currentPegs[i]!=null)
 				graphics.drawImage(currentPegs[i], 235+45*i, 275, 40, 40, null);
+	}
+
+	@Override
+	protected void messageRender(Graphics graphics) {
+
 	}
 	
 	private void incrementBlackPegs(){

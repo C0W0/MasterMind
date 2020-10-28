@@ -1,3 +1,26 @@
+/*=============================================================================
+Code Breaker
+Terry Zha and Jonathan Xie
+October 27, 2020
+Java 13.0.2
+The object created from this class runs the player-vs-player game mode
+of CodeBreaker
+
+list of global variables:
+currentPegs - the images of currently selected pegs for hint </type BufferedImage[]>
+guessImages - the images of currently selected colours for guess </type BufferedImage[]>
+currentGuess - the integer array form of currently selected colours for guess
+    </type int[]>
+blackPegCount - the number of black pegs picked for hint. This is used to
+    determine whether is victory condition is met </type int>
+numberOfGuessColour - the number of colour pieces picked. This is used to
+    prevent the submission of incomplete colour combination </type int>
+isDecoding - whether the current turn is for the decoder or the code maker.
+    This is used prevent the incorrect player from submitting a guess or
+    hint in the other's turn </type boolean>
+message - a system message to the players </type String>
+===============================================================================
+*/
 package state;
 
 import gfx.Assets;
@@ -5,17 +28,19 @@ import ui.UIButton;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.Arrays;
 
 import gamelogic.Game;
+import utils.Utils;
 
 public class PVPState extends GameState {
 
 
     private BufferedImage[] currentPegs, guessImages;
     private int[] currentGuess;
-    private int blackPegCount, whitePegCount, numberOfGuessColour;
-    private int numberOfGuesses;
+    private int blackPegCount, numberOfGuessColour;
     private boolean isDecoding;
+    private String message;
 
 
     public PVPState(Game game){
@@ -43,6 +68,7 @@ public class PVPState extends GameState {
 
     @Override
     protected void start() {
+        message = "Next Turn";
         isDecoding = true;
         numberOfGuesses = 0;
         clearGuess();
@@ -56,20 +82,20 @@ public class PVPState extends GameState {
         allPegs[numberOfGuesses] = currentPegs;
         numberOfGuesses ++;
         if(blackPegCount == 4){
-            System.out.println("The decoder won");
+            message = "You Win!";
+            isDecoding = false;
             isGameActive = false;
             showCode(currentGuess);
         }else if(numberOfGuesses >= maxGuess){
-            //should never happen
-            System.out.println("The decoder lost");
+            message = "You Win!";
             isGameActive = false;
         }
+        clearGuess();
         clearScore();
     }
 
     private void clearScore(){
         blackPegCount = 0;
-        whitePegCount = 0;
         currentPegs = new BufferedImage[4];
     }
 
@@ -78,7 +104,7 @@ public class PVPState extends GameState {
             return;
         isDecoding = false;
         panel[numberOfGuesses] = toColour(currentGuess);
-        clearGuess();
+        guessImages = new BufferedImage[4];
     }
 
     private void clearGuess(){
@@ -102,7 +128,6 @@ public class PVPState extends GameState {
         if(!isDecoding && isGameActive)
             for(int i = 0; i < 4; i++){
                 if(currentPegs[i] == null){
-                    whitePegCount++;
                     currentPegs[i] = Assets.pegWhite;
                     return;
                 }
@@ -126,5 +151,13 @@ public class PVPState extends GameState {
         for(int i = 0; i < 4; i++)
             if(guessImages[i] != null)
                 graphics.drawImage(guessImages[i], 155+55*i, 247, 30, 30, null);
+    }
+
+    @Override
+    protected void messageRender(Graphics graphics) {
+        if(isDecoding)
+            Utils.drawText(graphics, message, 310, 485, Color.BLACK, Assets.arial28);
+        else
+            Utils.drawText(graphics, message, 255, 260, Color.BLACK, Assets.arial28);
     }
 }

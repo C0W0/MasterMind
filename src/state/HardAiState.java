@@ -21,7 +21,6 @@ public class HardAiState extends GameState {
     private BufferedImage[] currentPegs;
 
     //guess and score
-    private int numberOfGuesses;
     private String lastGuess;
     private Score lastScore;
     private int blackPegCount, whitePegCount;
@@ -68,6 +67,11 @@ public class HardAiState extends GameState {
         for(int i = 0; i < currentPegs.length; i++)
             if(currentPegs[i] != null)
                 graphics.drawImage(currentPegs[i], 235+45*i, 275, 40, 40, null);
+    }
+
+    @Override
+    protected void messageRender(Graphics graphics) {
+
     }
 
     private void confirmScore(){

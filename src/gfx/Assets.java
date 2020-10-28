@@ -1,11 +1,14 @@
 package gfx;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 public class Assets {
 
+    public static Font arial28;
     public static BufferedImage emptySlot, pointer;
     public static BufferedImage backButton, restartButton, forwardButton;
     public static BufferedImage playButton, rulesAboutButton, exitButton, optionsButton, computerCodebreakerButton, 
@@ -84,6 +87,8 @@ public class Assets {
         numberButtons[8] = loadImage("/texture/images/eight.png");
         numberButtons[9] = loadImage("/texture/images/nine.png");
         numberButtons[10] = loadImage("/texture/images/ten.png");
+
+        arial28 = loadFront("res/Arial.ttf", 28);
     }
 
     private static BufferedImage loadImage(String path){
@@ -91,7 +96,15 @@ public class Assets {
             return ImageIO.read(Assets.class.getResource(path));
         } catch (IOException e){
             e.printStackTrace();
-            System.exit(1);
+        }
+        return null;
+    }
+
+    private static Font loadFront(String path, int size){
+        try {
+            return Font.createFont(Font.TRUETYPE_FONT, new File(path)).deriveFont(Font.BOLD, size);
+        }catch (IOException | FontFormatException e){
+            e.printStackTrace();
         }
         return null;
     }
