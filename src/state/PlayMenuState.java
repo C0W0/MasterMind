@@ -7,6 +7,15 @@ import ui.UIButton;
 
 public class PlayMenuState extends State{
 	
+	/**PlayMenuState method
+     * Constructor method of the PlayMenuState class
+     * 
+     * This method creates & places 5 buttons available to the user: 'Player Codebreaker', 'Computer Codebreaker',
+     * 'Player vs Player Codebreaker', as well as an 'Options' and 'Back' button. Each of these buttons will transfer
+     * the player to their corresponding state
+     * 
+     * @param game - the passed-in object of the custom-made Game class </type Game>
+     */
 	public PlayMenuState(Game game){
 		
 		super(game);
@@ -17,16 +26,22 @@ public class PlayMenuState extends State{
 		uiManager.addUIButton(new UIButton(435, 325, 175, 535, Assets.computerCodebreakerButton,()->game.setState(State.states[2])));
 		uiManager.addUIButton(new UIButton(55, 508, 175, 535, Assets.pvpCodebreakerButton,()->game.setState(State.states[8])));
 	}
-
+	
+	/**init method
+     * This procedural method is inherited from the parent class, the State class
+     * It is usually called by the use of a button, but not required for this state
+     */
 	@Override
 	public void init() {
 		
-		
-		
-		
-		
 	}
 
+	/**render method
+     * This procedural method is inherited from the parent class, the State class
+     * It constantly updates & renders graphics & buttons on the screen 45 times a second
+     * 
+     * @param graphics - the passed-in graphics context for drawing buffers on the screen </type Graphics>
+     */
 	@Override
 	public void render(Graphics graphics) {
 		

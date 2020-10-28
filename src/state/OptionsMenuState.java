@@ -10,6 +10,18 @@ public class OptionsMenuState extends State{
 	private int dupColours = 4;
 	private int maxGuesses = 10;
 	
+	/**OptionsMenuState method
+     * Constructor method of the OptionsMenuState class
+     * 
+     * This method creates & places 4 buttons that allow the user to adjust the number of duplicate colours allowed in the code (from 1-4),
+     * as well as 5 buttons that allow the adjustment of the maximum permitted guesses for the codebreaker (from 6-10)
+     * 
+     * List of Local Variables
+     *  count1 - temporary integer that determines the functional return value of the duplicate colour buttons </type int>
+     *  count2 - temporary integer that determines the functional return value of the guess limit buttons </type int>
+     * 
+     * @param game - the passed-in object of the custom-made Game class </type Game>
+     */
 	public OptionsMenuState(Game game){
 		
 		super(game);
@@ -27,18 +39,42 @@ public class OptionsMenuState extends State{
 		}
 
 	}
-
+	
+	/**init method
+     * This procedural method is inherited from the parent class, the State class
+     * It is usually called by the use of a button, but not required for this state
+     */
 	@Override
-	public void init() { }
+	public void init() { 
+		
+	}
 
+	/**setDupColours method
+     * This procedural method confirms the user's input of the number of duplicate colours allowed
+     * (affects code generation for player codebreaker)
+     * 
+     * List of Local Variables:
+     *  state - the casted object (from type State) that allows access to the setDupColour method </type GameState>
+     * 
+     * @param dupColours - the number (from 1-4) of duplicate colours the player chooses (determined by button pressing) </type int>
+     */
 	private void setDupColours(int dupColours) {
 		this.dupColours = dupColours;
 		for(int i = 4; i < 9; i++){
-			GameState state = (GameState)State.states[i];
-			state.setDupColour(dupColours);
+			GameState state = (GameState)State.states[i]; //casts the object state from type State to GameState to access the GameState method
+			state.setDupColour(dupColours); //calls the now-accessible setDupColour method
 		}
 	}
 
+	/**setDupColours method
+     * This procedural method confirms the user's input of the maximum number of permitted guesses
+     * (affects all gameplay-states & determines when the codebreaker loss message will appear)
+     * 
+     * List of Local Variables:
+     *  state - the casted object (from type State) that allows access to the setMaxGuess method </type GameState>
+     * 
+     * @param maxGuesses - the number (from 6-10) of maximum permitted guesses the player chooses (determined by button pressing) </type int>
+     */
 	private void setMaxGuesses(int maxGuesses) {
 		this.maxGuesses = maxGuesses;
 		for(int i = 4; i < 9; i++){
@@ -46,7 +82,13 @@ public class OptionsMenuState extends State{
 			state.setMaxGuess(maxGuesses);
 		}
 	}
-
+	
+	/**render method
+     * This procedural method is inherited from the parent class, the State class
+     * It constantly updates & renders graphics & buttons on the screen 45 times a second
+     * 
+     * @param graphics - the passed-in graphics context for drawing buffers on the screen </type Graphics>
+     */
 	@Override
 	public void render(Graphics graphics) {
 		
