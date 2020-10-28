@@ -17,8 +17,8 @@ public class OptionsMenuState extends State{
      * as well as 5 buttons that allow the adjustment of the maximum permitted guesses for the codebreaker (from 6-10)
      * 
      * List of Local Variables
-     *  count1 - temporary integer that determines the functional return value of the duplicate colour buttons </type int>
-     *  count2 - temporary integer that determines the functional return value of the guess limit buttons </type int>
+     * count1 - temporary integer that determines the functional return value of the duplicate colour buttons </type int>
+     * count2 - temporary integer that determines the functional return value of the guess limit buttons </type int>
      * 
      * @param game - the passed-in object of the custom-made Game class </type Game>
      */
@@ -71,7 +71,7 @@ public class OptionsMenuState extends State{
      * (affects all gameplay-states & determines when the codebreaker loss message will appear)
      * 
      * List of Local Variables:
-     *  state - the casted object (from type State) that allows access to the setMaxGuess method </type GameState>
+     * state - the casted object (from type State) that allows access to the setMaxGuess method </type GameState>
      * 
      * @param maxGuesses - the number (from 6-10) of maximum permitted guesses the player chooses (determined by button pressing) </type int>
      */

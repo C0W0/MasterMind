@@ -24,7 +24,7 @@ public class Utils {
      * ArrayList of String, with each line of the content of the files as
      * an element of the ArrayList
      *
-     * list of local variables:
+     * List of Local Variables:
      * lines - the ArrayList that stores the content of the file </type ArrayList>
      * br - a BufferedReader object that reads the file </type BufferedReader>
      * line - a line of the content of the files </type String>
@@ -53,7 +53,7 @@ public class Utils {
     /**loadFileAsString method
      * This functional method loads the file from a specified path as a String
      *
-     * list of local variables:
+     * List of Local Variables:
      * builder - an object that assists in concatenating Strings </type StringBuilder>
      * br - a BufferedReader object that reads the file </type BufferedReader>
      * line - a line of the content of the files </type String>
@@ -86,7 +86,7 @@ public class Utils {
      * This functional method converts a colour combination from
      * its integer array form to its String form
      *
-     * list of local variables:
+     * List of Local Variables:
      * sb - an object that assists in concatenating Strings </type StringBuilder>
      *
      * @param colours - the integer array form of the color combination </type int[]>
@@ -123,7 +123,7 @@ public class Utils {
      * This functional method converts a colour combination from
      * its String form to its integer array form
      *
-     * list of local variables:
+     * List of Local Variables:
      * colours - the int array form of the colour combination </type int[]>
      *
      * @param coloursStr - the String form of the color combination </type String>
@@ -160,7 +160,7 @@ public class Utils {
      * This functional method calculate and returns the number of
      * white pegs when matching a given pair of colour combinations
      *
-     * list of local variables:
+     * List of Local Variables:
      * colourSet1 - an integer array used to store the number of each
      *      colours found in the given code colour combination </type int[]>
      * colourSet1 - an integer array used to store the number of each
@@ -199,7 +199,7 @@ public class Utils {
      * This functional method calculate and returns the number of
      * black pegs when matching a given pair of colour combinations
      *
-     * list of local variables:
+     * List of Local Variables:
      * count - the number of colour duplicates found at the exact same position of the
      *      two given colour combinations </type int>
      *
@@ -219,7 +219,7 @@ public class Utils {
      * This functional method calculate and returns the score when
      * matching a given pair of colour combinations
      *
-     * list of local variables:
+     * List of Local Variables:
      * blackCount - the number of black pegs when matching the given
      *      pair of colour combinations </type int>
      *
@@ -235,7 +235,7 @@ public class Utils {
     /**drawText method
      * This procedural method renders text on screen
      *
-     * list of local variables:
+     * List of Local Variables:
      * fm - the dimension status of a given front, used to measure the
      *      space the text is going to take on the screen </type FontMetrics>
      * x - the coordinate of the left most pixel of the text </type int>

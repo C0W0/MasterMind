@@ -6,7 +6,7 @@ Java 13.0.2
 The object created from this class runs the player-vs-player game mode
 of CodeBreaker
 
-list of global variables:
+List of Global Variables:
 currentPegs - the images of currently selected pegs for hint </type BufferedImage[]>
 guessImages - the images of currently selected colours for guess </type BufferedImage[]>
 currentGuess - the integer array form of currently selected colours for guess

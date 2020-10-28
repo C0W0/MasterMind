@@ -7,7 +7,7 @@ The abstract parent class for every game play states
 Contains necessary fields and methods for every single
 game play state to run
 
-list of global variables:
+List of Global Variables:
 panel - a table of images in which the coloured pieces of each guesses
     are stored. It is used to render the coloured pieces on the screen.
      </type BufferedImage[][]>
@@ -33,7 +33,6 @@ numberOfGuesses - the current number of guesses </type int>
 package state;
 
 import gfx.Assets;
-import jdk.jfr.Description;
 import ui.UIButton;
 import gamelogic.Game;
 import utils.Utils;
@@ -170,7 +169,7 @@ public abstract class GameState extends State{
      * This functional method converts a colour combination from its integer array
      * form to its BufferedImage array form so it can be rendered on the screen.
      *
-     * list of local variables:
+     * List of Local Variables:
      * colours - the BufferedImage array form of the colour combination </type BufferedImage[]>
      *
      * @param intColour - the integer array form of the colour combination </type int[]>

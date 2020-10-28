@@ -5,7 +5,7 @@ October 4, 2020
 Java 13.0.2
 A class that stores the value (number of white and black pegs) of a score
 
-list of global variables:
+List of Global Variables:
 blackPeg - the number of black pegs of the score </type int>
 whitePeg - the number of white pegs of the score </type int>
 ===============================================================================
@@ -32,7 +32,7 @@ public class Score{
      * This functional method returns the String representation
      * of the score. It is composed of a number of 'B's and 'W's
      *
-     * list of local variables:
+     * List of Local Variables:
      * builder - a helper object which constructs the String form
      *      of the score </type StringBuilder>
      *

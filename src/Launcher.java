@@ -14,7 +14,7 @@ public class Launcher {
     /**main method:
      * This procedural method is called automatically and is used to organize the calling of other methods
      *
-     * list of local variables:
+     * List of Local Variables:
      * game - the main game object used for game logic, gui, and mouseIO </type Game>
      * @param args ...
      */

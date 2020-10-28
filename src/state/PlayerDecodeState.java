@@ -17,9 +17,11 @@ public class PlayerDecodeState extends GameState {
     private BufferedImage[] guessImages;
     private int[] currentGuess;
     private String code;
+    private boolean playerWin;
 
     public PlayerDecodeState(Game game){
         super(game);
+        playerWin = false;
         guessImages = new BufferedImage[4];
         currentGuess = new int[4];
         uiManager.addUIButton(new UIButton(95, 360, 55, 150, Assets.confirmButton, this::confirmGuess));
@@ -34,7 +36,8 @@ public class PlayerDecodeState extends GameState {
 
     @Override
     protected void start() {
-        numberOfGuesses = 0;
+        playerWin = false;
+    	numberOfGuesses = 0;
         do{
             code = Constants.allStringCombinations.get((int)(Math.random()*1296));
         }while (getNumberOfDuplicate(code) > dupColour);
@@ -60,6 +63,18 @@ public class PlayerDecodeState extends GameState {
         for(int i = 0; i < 4; i++)
             if(guessImages[i] != null)
                 graphics.drawImage(guessImages[i], 160+55*i, 300, 30, 30, null);
+
+      
+        if(!isGameActive) {
+        	if(playerWin) {
+        		graphics.drawImage(Assets.codebreakerWins, 80, 460, 380, 90, null);
+        		graphics.drawImage(Assets.numberButtons[numberOfGuesses+1], 229, 509, 35, 35, null);
+        	}
+        	else
+        		graphics.drawImage(Assets.codemakerWins, 80, 470, 380, 64, null);
+        }
+        	
+        	
     }
 
     @Override
@@ -92,6 +107,7 @@ public class PlayerDecodeState extends GameState {
         if(score.isDecoded()){
             showCode(Utils.toIntArrayColour(code));
             isGameActive = false;
+            playerWin = true;
             return;
         } else if(numberOfGuesses == maxGuess-1){
             System.out.println("Player lost");

@@ -17,6 +17,7 @@ public class Assets {
     public static BufferedImage pegBlack, pegWhite;
     public static BufferedImage confirmButton, deleteButton;
     public static BufferedImage aiGameboard, playerGameboard, pvpGameboard;
+    public static BufferedImage codebreakerWins, codemakerWins;
     public static BufferedImage mainMenu,playMenu,computerCodebreakerMenu,rulesAboutMenu,aboutUsPage,optionsMenu;
     public static BufferedImage emptyGameboard;
     public static BufferedImage[] colours, rulesPages, numberButtons;
@@ -58,6 +59,9 @@ public class Assets {
         computerCodebreakerButton = loadImage("/texture/buttons/computer_codebreaker_button.png");
         pvpCodebreakerButton = loadImage("/texture/buttons/pvp_codebreaker_button.png");
 
+        codebreakerWins = loadImage("/texture/images/codebreaker_wins.png");
+        codemakerWins = loadImage("/texture/images/codemaker_wins.png");
+
         easyButton = loadImage("/texture/buttons/easy_button.png");
         mediumButton = loadImage("/texture/buttons/medium_button.png");
         hardButton = loadImage("/texture/buttons/hard_button.png");
@@ -78,10 +82,12 @@ public class Assets {
         rulesPages[2] = loadImage("/texture/backgrounds/rules_page_3.png");
         
         numberButtons = new BufferedImage[11];
+        numberButtons[0] = loadImage("/texture/images/one.png"); //just in case
         numberButtons[1] = loadImage("/texture/images/one.png");
         numberButtons[2] = loadImage("/texture/images/two.png");
         numberButtons[3] = loadImage("/texture/images/three.png");
         numberButtons[4] = loadImage("/texture/images/four.png");
+        numberButtons[5] = loadImage("/texture/images/five.png");
         numberButtons[6] = loadImage("/texture/images/six.png");
         numberButtons[7] = loadImage("/texture/images/seven.png");
         numberButtons[8] = loadImage("/texture/images/eight.png");

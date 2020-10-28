@@ -67,6 +67,11 @@ public class HardAiState extends GameState {
         for(int i = 0; i < currentPegs.length; i++)
             if(currentPegs[i] != null)
                 graphics.drawImage(currentPegs[i], 235+45*i, 275, 40, 40, null);
+        
+        if(!isGameActive) {
+             graphics.drawImage(Assets.codebreakerWins, 80, 460, 380, 90, null);
+             graphics.drawImage(Assets.numberButtons[numberOfGuesses], 229, 509, 35, 35, null);
+    	}
     }
 
     @Override
@@ -85,7 +90,7 @@ public class HardAiState extends GameState {
             showCode(Utils.toIntArrayColour(lastGuess));
             isGameActive = false;
             return;
-        }else if(numberOfGuesses > 10){
+        }else if(numberOfGuesses > maxGuess){
             System.out.println("AI lose");
             isGameActive = false;
             return;

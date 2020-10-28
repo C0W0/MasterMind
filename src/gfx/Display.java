@@ -7,7 +7,7 @@ A critical graphic component, responsible for the game window
 A Display object will store the JFrame and the Canvas (which is responsible
 for rendering images)
 
-list of global variables:
+List of Global Variables:
 frame - a JFrame object. It represents the window of the program </type JFrame>
 canvas - the canvas which images will be rendered upon </type Canvas>
 ===============================================================================

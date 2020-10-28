@@ -7,7 +7,7 @@ The game class of the Code Breaker
 This is the main object of the Code Breaker. It is used to organize
 GUI, IO, and Game Logic together
 
-list of global variables:
+List of Global Variables:
 thread - the thread which controls the render loop of the GUI </type Thread>
 display - a critical graphics object that is responsible for the GUI window </type Display>
 timePerUpdate - the time (in nanosecond) between each frame </type double>
@@ -90,7 +90,7 @@ public class Game implements Runnable{
      * This procedural method is called 45 times per second to
      * render images onto screen
      *
-     * list of local variables:
+     * List of Local Variables:
      * bufferedStrategy - the mechanism that organizes complex memory on
      *     a window. It is used to obtain the graphics object to render
      *     images onto the screen </type BufferStrategy>
@@ -135,7 +135,7 @@ public class Game implements Runnable{
      * thread of the game and is called at the beginning of
      * the program
      *
-     * list of local variables:
+     * List of Local Variables:
      * thread - the main thread of the game </type Thread>
      */
     public synchronized void start(){
@@ -173,7 +173,7 @@ public class Game implements Runnable{
      * This functional method is used to to determine whether the
      * game should start rendering the next frame on the screen.
      *
-     * list of local variables:
+     * List of Local Variables:
      * now - the system time in nanosecond when the program is called </type long>
      *
      * @return whether to start rendering the next frame </type boolean>

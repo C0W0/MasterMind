@@ -6,7 +6,7 @@ Java 13.0.2
 This class contains all of the constants this program needs to run properly
 This class will read and write to the 2 data files of the game
 
-list of global variables:
+List of Global Variables:
 allStringCombinations - a String ArrayList that contains all possible
     permutations of colours in the String form </type ArrayList>
 possibleScores - a 2d HashMap that contains all possible pairs of
@@ -57,7 +57,7 @@ public class Constants {
      * with all possible scores of every pair of possible combinations of
      * colours from the file scores.txt
      *
-     * list of local variables:
+     * List of Local Variables:
      * allScore - the score section of the guess-code-score matrix read
      *      from a pre-stored file </type ArrayList>
      * line - a line in the guess-code-score matrix </type HashMap>
@@ -83,7 +83,7 @@ public class Constants {
      * of every pair of possible combinations of colours to the file
      *
      *
-     * list of local variables:
+     * List of Local Variables:
      * file - the representation of scores.txt. It will be created and
      *      written to </type File>
      * fileWriter - an PrintWriter object to write to the file </type PrintWriter>
@@ -119,7 +119,7 @@ public class Constants {
      * does not exist. It will create the file and fill in all possible
      * permutations of colours to the file
      *
-     * list of local variables:
+     * List of Local Variables:
      * file - the representation of permutations.txt. It will be created and
      *      written to </type File>
      * fileWriter - an PrintWriter object to write to the file </type PrintWriter>

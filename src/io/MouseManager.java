@@ -5,7 +5,7 @@ October 8, 2020
 Java 13.0.2
 This class manages the mouse IO and records all MouseEvent
 
-list of global variables:
+List of Global Variables:
 uiManager - an object that stores the set of UI elements that receives
     the MouseEvents </type UIManager>
 ===============================================================================

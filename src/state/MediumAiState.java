@@ -16,6 +16,7 @@ public class MediumAiState extends GameState {
 
 	private boolean generated = false;
 	private boolean firstGuess = true;
+	private boolean playerWin;
 	
 	private int coloursFound;
 	protected int choice;
@@ -28,7 +29,8 @@ public class MediumAiState extends GameState {
 
 	public MediumAiState(Game game) {
 		super(game);
-
+		
+		playerWin = false;
 		currentPegs= new BufferedImage[4];
 
 		uiManager.addUIButton(new UIButton(90, 270, 55, 55, Assets.blackPegButton, this::incrementBlackPegs));
@@ -46,7 +48,7 @@ public class MediumAiState extends GameState {
 
 	@Override
 	protected void start() {
-
+		playerWin = false;
 		generated=false;
 		firstGuess=true;
 		blackPegCount=whitePegCount=0;
@@ -70,6 +72,15 @@ public class MediumAiState extends GameState {
 		for(int i=0; i<currentPegs.length; i++) //draws black/white pegs (during selection)
 			if(currentPegs[i]!=null)
 				graphics.drawImage(currentPegs[i], 235+45*i, 275, 40, 40, null);
+		
+		if(!isGameActive) {
+        	if(playerWin)
+        		graphics.drawImage(Assets.codemakerWins, 80, 470, 380, 64, null);
+        	else {
+        		graphics.drawImage(Assets.codebreakerWins, 80, 460, 380, 90, null);
+        		graphics.drawImage(Assets.numberButtons[numberOfGuesses-1], 229, 509, 35, 35, null);
+        	}
+        }
 	}
 
 	@Override
@@ -126,6 +137,7 @@ public class MediumAiState extends GameState {
 		else if(numberOfGuesses>maxGuess) {
 			System.out.println("not decoded");
 			isGameActive = false;
+			playerWin = true;
 			return;
 		}
 		

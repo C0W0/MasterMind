@@ -8,7 +8,7 @@ A Guess object associates the worstCase of each guess, whether the guess is a
 possible answer, and the guess itself together, in order to compare the
 guesses and choose an optimal one
 
-list of global variables:
+List of Global Variables:
 worstCase - how many possible answer this guess may lead to </type int>
 guessIsImpossible - is the guess a possible answer </type boolean>
 guess - the guess itself </type int[]>
@@ -63,7 +63,7 @@ public class Guess {
     /**getMinimumGuess method
      * This functional method compares all possible guesses and returns the optimal one
      *
-     * list of local variables:
+     * List of Local Variables:
      * minimumGuess - the optimal guess being updated by searching through the
      *      ArrayList </type Guess>
      *
