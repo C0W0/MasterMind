@@ -19,7 +19,7 @@ public class MainMenuState extends State{
 	/**MainMenuState method
      * Constructor method of the MainMenuState class
      * 
-     * This  method creates & places the 3 buttons available to the user in the main menu: 'Play',
+     * This method creates & places the 3 buttons available to the user in the main menu: 'Play',
      * 'Rules/About', and 'Exit'. Each of these buttons will transfer their player to their corresponding
      * state, or terminate the program
      * 

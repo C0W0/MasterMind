@@ -10,14 +10,16 @@ import utils.Utils;
 import gamelogic.Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 public class PlayerDecodeState extends GameState {
 
     private int numberOfGuessColour;
     private BufferedImage[] guessImages;
     private int[] currentGuess;
-    private String code;
+    private String code, message;
     private boolean playerWin;
+    private String[] messages;
 
     public PlayerDecodeState(Game game){
         super(game);
@@ -27,7 +29,7 @@ public class PlayerDecodeState extends GameState {
         uiManager.addUIButton(new UIButton(95, 360, 55, 150, Assets.confirmButton, this::confirmGuess));
         uiManager.addUIButton(new UIButton(270, 360, 55, 150, Assets.deleteButton, this::emptyCurrentGuess));
         uiManager.addUIButton(new UIButton(30, 648, 90, 90, Assets.backButton, ()->game.setState(State.states[1])));
-
+        messages = Utils.loadFileAsArrayList("res/data/decode_message.txt").toArray(new String[0]);
         for(int i = 0; i < 6; i++) {
             int colour = i;
             uiManager.addUIButton(new UIButton(105+55*i, 240, 30, 30, Assets.colours[i], () -> addGuessColour(colour)));
@@ -42,8 +44,8 @@ public class PlayerDecodeState extends GameState {
             code = Constants.allStringCombinations.get((int)(Math.random()*1296));
         }while (getNumberOfDuplicate(code) > dupColour);
 
+        message = messages[0];
         System.out.println(code);
-        System.out.println(getNumberOfDuplicate(code));
     }
 
     private int getNumberOfDuplicate(String code){
@@ -79,7 +81,27 @@ public class PlayerDecodeState extends GameState {
 
     @Override
     protected void messageRender(Graphics graphics) {
-
+        ArrayList<String> lines = Utils.splitString(message, 44);
+        if (isGameActive) {
+            if(numberOfGuesses == 0){
+                Utils.drawText(graphics, "Welcome, codebreaker",
+                        260, 470, Color.BLACK, Assets.arial28);
+                for(int y = 0; y < lines.size(); y++){
+                    Utils.drawText(graphics, lines.get(y),
+                            260, 505+25*y, Color.BLACK, Assets.arial20);
+                }
+            }else {
+                for(int y = 0; y < lines.size(); y++){
+                    Utils.drawText(graphics, lines.get(y),
+                            260, 495+25*y, Color.BLACK, Assets.arial20);
+                }
+            }
+        }else {
+            for(int y = 0; y < lines.size(); y++) {
+                Utils.drawText(graphics, lines.get(y),
+                        260, 560 + 25 * y, Color.BLACK, Assets.arial20);
+            }
+        }
     }
 
     private void addGuessColour(int colour){
@@ -108,12 +130,24 @@ public class PlayerDecodeState extends GameState {
             showCode(Utils.toIntArrayColour(code));
             isGameActive = false;
             playerWin = true;
+            message = messages[(int)(Math.random()*2+1)];
             return;
         } else if(numberOfGuesses == maxGuess-1){
-            System.out.println("Player lost");
+            showCode(Utils.toIntArrayColour(code));
             isGameActive = false;
+            message = messages[(int)(Math.random()*5+9)];
             return;
         }
+        if(numberOfGuesses == 0)
+            message = messages[(int)(Math.random()*3+3)];
+        else if(numberOfGuesses == maxGuess-2)
+            message = messages[(int)(Math.random()*3+6)];
+        else if(score.getBlackPeg() == 0 && score.getWhitePeg() == 0)
+            message = messages[(int)(Math.random()*3+14)];
+        else if(score.getBlackPeg() >= 2)
+            message = messages[(int)(Math.random()*3+17)];
+        else
+            message = messages[(int)(Math.random()*3+20)];
         numberOfGuesses ++;
     }
 

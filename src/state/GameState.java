@@ -73,12 +73,10 @@ public abstract class GameState extends State{
     }
 
     /**render method
-     * This procedural method is inherited from the State class. It is called
-     * in the main game object 45 times a second. It is used to render text and
-     * images onto the screen and all of the other rendering methods
-     * (e.g. postRender()) within the object are called here.
+     * This procedural method is inherited from the parent class, the State class
+     * It constantly updates & renders graphics & buttons on the screen 45 times a second
      *
-     * @param graphics - a graphics context for drawing buffer </type Graphics>
+     * @param graphics - the passed-in graphics context for drawing buffers on the screen </type Graphics>
      */
     @Override
     public void render(Graphics graphics) {
@@ -116,9 +114,9 @@ public abstract class GameState extends State{
     }
 
     /**init method
-     * This procedural method is inherited from the State class. It is triggered by
-     * clicking buttons and switching states. This method refreshes come critical
-     * variables within this state object.
+     * This procedural method is inherited from the parent class, the State class.
+     * It is invoked by clicking buttons and switching states. This method
+     * refreshes some critical variables within this state object.
      */
     @Override
     public void init() {

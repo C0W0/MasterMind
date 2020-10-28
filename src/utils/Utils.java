@@ -32,7 +32,7 @@ public class Utils {
      * @param path - the path of the file </type String>
      * @return lines - the content of the file </type ArrayList>
      */
-    static ArrayList<String> loadFileAsArrayList(String path){
+    public static ArrayList<String> loadFileAsArrayList(String path){
         ArrayList<String> lines = new ArrayList<>();
         try{
             BufferedReader br = new BufferedReader(new FileReader(path));
@@ -255,6 +255,36 @@ public class Utils {
         int x = xPos - fm.stringWidth(text)/2;
         int y = (yPos - fm.getHeight()/2) + fm.getAscent();
         graphics.drawString(text, x, y);
+    }
+
+    /**splitString method
+     * This functional method split Strings into substrings without
+     * damaging the word structure of the sentence. It is used for
+     * text wrapping.
+     *
+     * List of Local Variables:
+     * builder - an object that assists in concatenating Strings </type StringBuilder>
+     * output - the sentence split into multiple lines </type ArrayList>
+     * size - an integer which counts the length of the current line </type int>
+     *
+     * @param string - the original sentence </type String>
+     * @param substringSize - the maximum length of a subString </type int>
+     * @return output - the sentence split into multiple lines </type ArrayList>
+     */
+    public static ArrayList<String> splitString(String string, int substringSize){
+        StringBuilder builder = new StringBuilder();
+        ArrayList<String> output = new ArrayList<>();
+        int size = 0;
+        for(String str: string.split("\\s+")){
+            if(size >= substringSize){
+                output.add(builder.toString());
+                builder = new StringBuilder();
+            }
+            builder.append(str).append(" ");
+            size = builder.length();
+        }
+        output.add(builder.toString());
+        return output;
     }
 
 

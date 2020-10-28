@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class Assets {
 
-    public static Font arial28;
+    public static Font arial28, arial20;
     public static BufferedImage emptySlot, pointer;
     public static BufferedImage backButton, restartButton, forwardButton;
     public static BufferedImage playButton, rulesAboutButton, exitButton, optionsButton, computerCodebreakerButton, 
@@ -94,7 +94,8 @@ public class Assets {
         numberButtons[9] = loadImage("/texture/images/nine.png");
         numberButtons[10] = loadImage("/texture/images/ten.png");
 
-        arial28 = loadFront("res/Arial.ttf", 28);
+        arial28 = loadFront("res/Arial.ttf", 28, Font.BOLD);
+        arial20 = loadFront("res/Arial.ttf", 20, Font.PLAIN);
     }
 
     private static BufferedImage loadImage(String path){
@@ -106,9 +107,9 @@ public class Assets {
         return null;
     }
 
-    private static Font loadFront(String path, int size){
+    private static Font loadFront(String path, int size, int style){
         try {
-            return Font.createFont(Font.TRUETYPE_FONT, new File(path)).deriveFont(Font.BOLD, size);
+            return Font.createFont(Font.TRUETYPE_FONT, new File(path)).deriveFont(style, size);
         }catch (IOException | FontFormatException e){
             e.printStackTrace();
         }

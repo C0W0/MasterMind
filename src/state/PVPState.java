@@ -42,7 +42,14 @@ public class PVPState extends GameState {
     private boolean isDecoding;
     private String message;
 
-
+    /**PVPState method
+     * Constructor method of the PVPState class
+     *
+     * This method creates & places all of the necessary buttons for this game state.
+     * It also initializes some variables.
+     *
+     * @param game - the passed-in object of the custom-made Game class </type Game>
+     */
     public PVPState(Game game){
         super(game);
         isDecoding = true;
@@ -66,6 +73,11 @@ public class PVPState extends GameState {
         
     }
 
+    /**start method
+     * This procedural method is inherited from the parent class, the GameState class.
+     * It is called in the init method and contains all of the procedures to start a
+     * new game.
+     */
     @Override
     protected void start() {
         message = "Next Turn";
@@ -75,6 +87,10 @@ public class PVPState extends GameState {
         clearScore();
     }
 
+    /**confirmScore method
+     * This procedural method confirms the selected hint for a guess.
+     * This method also checks for the win/lose condition.
+     */
     private void confirmScore(){
         if(isDecoding || !isGameActive)
             return;
@@ -94,11 +110,17 @@ public class PVPState extends GameState {
         clearScore();
     }
 
+    /**clearScore method
+     * This procedural method clears the selected hint for a guess.
+     */
     private void clearScore(){
         blackPegCount = 0;
         currentPegs = new BufferedImage[4];
     }
 
+    /**confirmGuess method
+     * This procedural method confirms the selected guess.
+     */
     private void confirmGuess(){
         if(!isDecoding || !isGameActive || guessImages[3] == null)
             return;
@@ -107,12 +129,19 @@ public class PVPState extends GameState {
         guessImages = new BufferedImage[4];
     }
 
+    /**confirmGuess method
+     * This procedural method clears the selected guess.
+     */
     private void clearGuess(){
         numberOfGuessColour = 0;
         currentGuess = new int[4];
         guessImages = new BufferedImage[4];
     }
 
+    /**incrementBlackPegs method
+     * This procedural method increment the number of black pegs for the hint by
+     * 1 and place in the appropriate image.
+     */
     private void incrementBlackPegs(){
         if(!isDecoding && isGameActive)
             for(int i = 0; i < 4; i++){
@@ -124,6 +153,10 @@ public class PVPState extends GameState {
             }
     }
 
+    /**incrementWhitePegs method
+     * This procedural method increment the number of white pegs for the hint by
+     * 1 and place in the appropriate image
+     */
     private void incrementWhitePegs(){
         if(!isDecoding && isGameActive)
             for(int i = 0; i < 4; i++){
@@ -134,6 +167,12 @@ public class PVPState extends GameState {
             }
     }
 
+    /**addGuessColour method
+     * This procedural method adds a colour to the guess combination and place
+     * int the appropriate image.
+     *
+     * @param colour - the number code of the colour </type int>
+     */
     private void addGuessColour(int colour){
         if(numberOfGuessColour < 4 && isGameActive){
             currentGuess[numberOfGuessColour] = colour;
@@ -142,6 +181,13 @@ public class PVPState extends GameState {
         }
     }
 
+    /**postRender method
+     * This procedural method is inherited from the parent class, the GameState class.
+     * It is called in the render method and contains all of the procedures to render
+     * additional graphical contents to the screen.
+     *
+     * @param graphics - a graphics context for drawing buffer </type Graphics>
+     */
     @Override
     protected void postRender(Graphics graphics) {
         graphics.drawImage(Assets.pvpGameboard, 0, 0, cornerWidth, cornerHeight, null);
@@ -153,6 +199,13 @@ public class PVPState extends GameState {
                 graphics.drawImage(guessImages[i], 155+55*i, 247, 30, 30, null);
     }
 
+    /**messageRender method
+     * This procedural method is inherited from the parent class, the GameState class.
+     * It is called in the render method and contains all of the procedures to render
+     * text messages onto the screen.
+     *
+     * @param graphics - a graphics context for drawing buffer </type Graphics>
+     */
     @Override
     protected void messageRender(Graphics graphics) {
         if(isDecoding)
