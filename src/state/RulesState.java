@@ -1,3 +1,14 @@
+/*==========================================================================================
+Codebreaker
+Terry Zha and Jonathan Xie
+November 2, 2020
+Java 13.0.2
+The Rules Page class of the Code Breaker
+This is the state class that displays the "Rules Page" on the GUI,
+including all graphics & buttons associated with managing user input. 
+This state allows the user to scroll through the 3 pages of rules about how to play Codebreaker
+============================================================================================
+*/
 package state;
 
 import java.awt.Graphics;

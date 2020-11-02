@@ -1,3 +1,15 @@
+/*==========================================================================================
+Codebreaker
+Terry Zha and Jonathan Xie
+November 2, 2020
+Java 13.0.2
+The Play Menu class of the Code Breaker
+This is the state class that displays the "Play Menu" on the GUI,
+including all graphics & buttons associated with managing user input. 
+This state allows the user to choose which of the 3 available gamemodes they would like to play
+(player codebreaker, computer codebreaker, player vs player codebreaker)
+============================================================================================
+*/
 package state;
 
 import java.awt.Graphics;

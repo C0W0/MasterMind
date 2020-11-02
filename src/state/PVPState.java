@@ -138,8 +138,8 @@ public class PVPState extends GameState {
     }
 
     /**incrementBlackPegs method
-     * This procedural method increment the number of black pegs for the hint by
-     * 1 and place in the appropriate image.
+     * This procedural method increments the number of black pegs for the hint by
+     * 1 and places in the appropriate image.
      */
     private void incrementBlackPegs(){
         if(!isDecoding && isGameActive)
@@ -153,8 +153,8 @@ public class PVPState extends GameState {
     }
 
     /**incrementWhitePegs method
-     * This procedural method increment the number of white pegs for the hint by
-     * 1 and place in the appropriate image
+     * This procedural method increments the number of white pegs for the hint by
+     * 1 and places in the appropriate image
      */
     private void incrementWhitePegs(){
         if(!isDecoding && isGameActive)
