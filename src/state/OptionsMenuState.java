@@ -1,3 +1,15 @@
+/*==========================================================================================
+Codebreaker
+Terry Zha and Jonathan Xie
+November 2, 2020
+Java 13.0.2
+The Options Menu class of the Code Breaker
+This is the state class that displays the "Options Menu" on the GUI,
+including all graphics & buttons associated with managing user input.
+This state allows the user to set their desired preference for 2 gameplay elements,
+being number of permitted duplicate colours (1-4), as well as maximum permitted guesses (6-10)
+============================================================================================
+*/
 package state;
 
 import java.awt.Graphics;

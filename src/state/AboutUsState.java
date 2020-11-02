@@ -1,3 +1,14 @@
+/*==========================================================================================
+Codebreaker
+Terry Zha and Jonathan Xie
+November 2, 2020
+Java 13.0.2
+The About Us class of the Code Breaker
+This is the state class that displays the "About Us" page on the GUI,
+including all graphics & buttons associated with managing user input.
+This state displays a graphic that informs the user about J & T's Virtual Table
+============================================================================================
+*/
 package state;
 
 import java.awt.Graphics;

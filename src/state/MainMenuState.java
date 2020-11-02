@@ -1,12 +1,15 @@
 /*==========================================================================================
 Codebreaker
 Terry Zha and Jonathan Xie
-October 23, 2020
+November 2, 2020
 Java 13.0.2
-This is the class that draws & manages user input for the 'main menu' of the game.
-This is the first menu that is generated upon launching the game
-============================================================================================*/
-
+The Main Menu class of the Code Breaker
+This is the state class that displays the "Main Menu" on the GUI,
+including all graphics & buttons associated with managing user input. 
+This state is automatically called/displayed upon launching the program, and allows
+the user to navigate to the play menu, rules/about menu, or terminate the program
+============================================================================================
+*/
 package state;
 
 import java.awt.Graphics;
