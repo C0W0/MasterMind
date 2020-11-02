@@ -148,14 +148,17 @@ public class Assets {
         numberButtons[9] = loadImage("/texture/images/nine.png");
         numberButtons[10] = loadImage("/texture/images/ten.png");
 
-        arial28 = loadFront("res/Arial.ttf", 28, Font.BOLD);
-        arial20 = loadFront("res/Arial.ttf", 20, Font.PLAIN);
+        arial28 = loadFont("res/Arial.ttf", 28, Font.BOLD);
+        arial20 = loadFont("res/Arial.ttf", 20, Font.PLAIN);
     }
     
     /**loadImage method
-     * This procedural method assigns a BufferedImage variable a png image by locating it using a certain file path
+     * This functional method decodes the image file from the res folder by reading the
+     * path of the image relative to the /res folder
      * 
-     *  @param path - the file path used to locate the png image file used <type String>
+     * @param path - the file path used to locate the png image file used <type String>
+     * @return - the decoded image from the given path. null if the ImageIO is unable
+     *      to decode the file </type BufferedImage>
      */
     private static BufferedImage loadImage(String path){
         try {
@@ -166,7 +169,17 @@ public class Assets {
         return null;
     }
 
-    private static Font loadFront(String path, int size, int style){
+    /**loadFont method
+     * This functional method decodes the font file from the res folder by reading the
+     * path of the ttf file relative to the /res folder
+     *
+     * @param path - the file path used to locate the ttf font file used <type String>
+     * @param size - the size of the font </type int>
+     * @param style - the style of the font </type int>
+     * @return - the decoded font with given size and style configuration. null if the
+     *      FontIO is unable to decode the file </type Font>
+     */
+    private static Font loadFont(String path, int size, int style){
         try {
             return Font.createFont(Font.TRUETYPE_FONT, new File(path)).deriveFont(style, size);
         }catch (IOException | FontFormatException e){
