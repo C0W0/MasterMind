@@ -25,10 +25,13 @@ public class Display {
 
     /**Display method
      * The constructor method of the Display class
+     * It sets the dimension of the window, packs in a canvas
+     * object to render onto, and performs some other critical
+     * procedures for displaying a window on the screen.
      *
-     * @param title
-     * @param width
-     * @param height
+     * @param title - The title of the JFrame </type String>
+     * @param width - The width of the JFrame </type int>
+     * @param height - The height of the JFrame </type int>
      */
     public Display(String title, int width, int height){
         frame = new JFrame(title);
@@ -50,10 +53,23 @@ public class Display {
 
     //getters and setters
 
+    /**getCanvas method
+     * This functional methods returns out the canvas of the
+     * Display object
+     *
+     * @return canvas - the canvas which images will be rendered
+     *      upon </type Canvas>
+     */
     public Canvas getCanvas(){
         return canvas;
     }
 
+    /**getFrame method
+     * This functional methods returns out the JFrame object
+     *
+     * @return frame - a JFrame object which represents the window
+     *      of the program </type JFrame>
+     */
     public JFrame getFrame(){
         return frame;
     }

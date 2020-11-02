@@ -1,5 +1,5 @@
 package state;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,12 +7,15 @@ import java.util.Arrays;
 import gamelogic.Game;
 import gfx.Assets;
 import ui.UIButton;
+import utils.Utils;
 
 
 public class MediumAiState extends GameState {
 
 	private BufferedImage[] currentPegs;
 	private int blackPegCount, whitePegCount;
+	private String[] messages;
+	protected String header;
 
 	private boolean generated = false;
 	private boolean firstGuess = true;
@@ -43,6 +46,12 @@ public class MediumAiState extends GameState {
 		guess = new int[4];
 		knownColours = new int[4];
 		allPermutations = new int[24][4];
+
+		messages = Utils.loadFileAsArrayList("res/data/medium_ai.txt").toArray(new String[0]);
+		message = messages[0];
+		header = "Welcome to MEDIUM AI codebreaker";
+		for(int i = 0; i < messages.length; i++)
+			System.out.println(i+" "+messages[i]);
 	}
 
 
@@ -61,6 +70,7 @@ public class MediumAiState extends GameState {
 		guess = new int[4];
 		knownColours = new int[4];
 		allPermutations = new int[24][4];
+		message = messages[0];
 
 		confirmFeedback();
 	}
@@ -85,7 +95,27 @@ public class MediumAiState extends GameState {
 
 	@Override
 	protected void messageRender(Graphics graphics) {
-
+		ArrayList<String> lines = Utils.splitString(message, 40);
+		if (isGameActive) {
+			if(numberOfGuesses == 1){
+				Utils.drawText(graphics, header,
+						260, 470, Color.BLACK, Assets.arial20);
+				for(int y = 0; y < lines.size(); y++){
+					Utils.drawText(graphics, lines.get(y),
+							260, 505+25*y, Color.BLACK, Assets.arial20);
+				}
+			}else {
+				for(int y = 0; y < lines.size(); y++){
+					Utils.drawText(graphics, lines.get(y),
+							260, 495+25*y, Color.BLACK, Assets.arial20);
+				}
+			}
+		}else {
+			for(int y = 0; y < lines.size(); y++) {
+				Utils.drawText(graphics, lines.get(y),
+						260, 560 + 25 * y, Color.BLACK, Assets.arial20);
+			}
+		}
 	}
 	
 	private void incrementBlackPegs(){
@@ -130,20 +160,29 @@ public class MediumAiState extends GameState {
 
 		if(blackPegCount==4) {
 			showCode(guess);
+			message = messages[(int)(Math.random()*3+1)];
 			isGameActive = false;
 			return;
 		}
 		
 		else if(numberOfGuesses>maxGuess) {
-			System.out.println("not decoded");
+			message = messages[(int)(Math.random()*3+4)];
 			isGameActive = false;
 			playerWin = true;
 			return;
 		}
 		
-		if(coloursFound<4)
+		if(coloursFound<4) {
 			updateColoursFound();
-		
+		}
+		if(numberOfGuesses != 1){
+			if(coloursFound<4){
+				message = messages[(int)(Math.random()*5+7)];
+			}else {
+				message = messages[(int)(Math.random()*11+12)];
+			}
+		}
+
 		if(numberOfGuesses==6 && coloursFound<4)
 			fillRemainingColour();
 			

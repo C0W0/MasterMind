@@ -40,7 +40,6 @@ public class PVPState extends GameState {
     private int[] currentGuess;
     private int blackPegCount, numberOfGuessColour;
     private boolean isDecoding;
-    private String message;
 
     /**PVPState method
      * Constructor method of the PVPState class

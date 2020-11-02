@@ -1,3 +1,19 @@
+/*=============================================================================
+Code Breaker
+Terry Zha and Jonathan Xie
+October 27, 2020
+Java 13.0.2
+The abstract parent class for every game state
+Contains necessary fields and abstract methods for the basic
+functionality of a state
+
+List of Global Variables:
+uiManager - An object that stores all of the buttons and tracks button
+     </type BufferedImage[][]>
+
+===============================================================================
+*/
+
 package state;
 
 import ui.UIManager;
@@ -15,7 +31,6 @@ public abstract class State {
     	this.game = game; //refers game variable within this CLASS
     	uiManager = new UIManager();
     }
-
 
     
     public abstract void init();

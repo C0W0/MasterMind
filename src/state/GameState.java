@@ -3,7 +3,7 @@ Code Breaker
 Terry Zha and Jonathan Xie
 October 27, 2020
 Java 13.0.2
-The abstract parent class for every game play states
+The abstract parent class for every game play state
 Contains necessary fields and methods for every single
 game play state to run
 
@@ -21,6 +21,7 @@ cornerWidth - the width of the corner area of the screen. This area is
     reserved for logos and title of the current game state </type int>
 cornerHeight - the height of the corner area of the screen. This area is
     reserved for logos and title of the current game state. </type int>
+message - the message that is currently displayed on the screen </type String>
 maxGuess - the maximum number of guesses the codebreaker may attempt before
     losing. </type int>
 dupColour - the maximum number of duplicate colours allowed in the secret
@@ -30,6 +31,7 @@ isGameActive - whether the game is still on going and the player can take
 numberOfGuesses - the current number of guesses </type int>
 ===============================================================================
 */
+
 package state;
 
 import gfx.Assets;
@@ -46,6 +48,7 @@ public abstract class GameState extends State{
     protected BufferedImage[][] panel, allPegs;
     protected BufferedImage[] code;
     protected final int cornerWidth, cornerHeight;
+    protected String message;
 
     //control
     protected int maxGuess, dupColour;

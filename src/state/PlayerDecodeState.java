@@ -17,7 +17,7 @@ public class PlayerDecodeState extends GameState {
     private int numberOfGuessColour;
     private BufferedImage[] guessImages;
     private int[] currentGuess;
-    private String code, message;
+    private String code;
     private boolean playerWin;
     private String[] messages;
 
@@ -34,6 +34,7 @@ public class PlayerDecodeState extends GameState {
             int colour = i;
             uiManager.addUIButton(new UIButton(105+55*i, 240, 30, 30, Assets.colours[i], () -> addGuessColour(colour)));
         }
+        message = messages[0];
     }
 
     @Override
@@ -81,7 +82,7 @@ public class PlayerDecodeState extends GameState {
 
     @Override
     protected void messageRender(Graphics graphics) {
-        ArrayList<String> lines = Utils.splitString(message, 44);
+        ArrayList<String> lines = Utils.splitString(message, 40);
         if (isGameActive) {
             if(numberOfGuesses == 0){
                 Utils.drawText(graphics, "Welcome, codebreaker",

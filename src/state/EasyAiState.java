@@ -4,6 +4,7 @@ public class EasyAiState extends MediumAiState {
 
     public EasyAiState(Game game){
         super(game);
+        header = "Welcome to EASY AI codebreaker";
     }
 
     @Override
