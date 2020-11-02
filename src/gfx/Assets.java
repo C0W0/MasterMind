@@ -44,9 +44,9 @@ computerCodebreakerMenu - background graphic used for the "Computer Codebreaker 
 rulesAboutMenu - background graphic used for the "Rules/About Menu" state <type BufferedImage>
 aboutUsPage - background graphic used for the "About Us Menu" state <type BufferedImage>
 optionsMenu - background graphic used for the "Options Menu" state <type BufferedImage>
-colours - array used to store graphics used to display the 6 possible code colours (blue, green, orange, purple, red, yellow) <type BufferedImage Array>
-rulesPages - array used to store background graphics for the 3 pages/sections of the "Rules" state <type BufferedImage Array>
-numberButtons - array used to store graphics used to display numbers from 1-10 <type BufferedImage Array>
+colours - array used to store graphics used to display the 6 possible code colours (blue, green, orange, purple, red, yellow) <type BufferedImage[]>
+rulesPages - array used to store background graphics for the 3 pages/sections of the "Rules" state <type BufferedImage[]>
+numberButtons - array used to store graphics used to display numbers from 1-10 <type BufferedImage[]>
 ============================================================================================
 */
 package gfx;
