@@ -195,7 +195,7 @@ public class HardAiState extends GameState {
             isGameActive = false;
             return;
         }
-        message = "(The AI is making decision)";
+        message = "(The AI is making a decision)";
         int[] guess = makeGuesses();
 
         if(numberOfGuesses == 4)
