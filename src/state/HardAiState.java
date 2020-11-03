@@ -8,7 +8,7 @@ of CodeBreaker and contains the best AI algorithm
 
 List of Global Variables:
 currentPegs - the images of currently selected pegs for hint </type BufferedImage[]>
-message[] - the list of all messages, loaded from a file </type String[]>
+message - the list of all messages, loaded from a file </type String[]>
 lastGuess - the last guess of the AI, in the String form </type String>
 lastScore - the score of last guess, provided by the player </type Score>
 blackPegCount - the number of black pegs picked for hint </type int>
@@ -157,8 +157,10 @@ public class HardAiState extends GameState {
                     260, 470, Color.BLACK, Assets.arial20);
             for(int y = 0; y < lines.size(); y++){
                 Utils.drawText(graphics, lines.get(y),
-                        260, 505+25*y, Color.BLACK, Assets.arial20);
+                        260, 500+25*y, Color.BLACK, Assets.arial20);
             }
+            for(int i = 0; i < 6; i++)
+                graphics.drawImage(Assets.colours[i], 105+55*i, 565, 26, 26, null);
         }else {
             for(int y = 0; y < lines.size(); y++){
                 Utils.drawText(graphics, lines.get(y),

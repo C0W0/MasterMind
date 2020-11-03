@@ -18,7 +18,6 @@ numberOfGuessColour - the number of colour pieces picked. This is used to
 isDecoding - whether the current turn is for the decoder or the code maker.
     This is used prevent the incorrect player from submitting a guess or
     hint in the other's turn </type boolean>
-message - a system message to the players </type String>
 ===============================================================================
 */
 package state;
@@ -168,7 +167,7 @@ public class PVPState extends GameState {
 
     /**addGuessColour method
      * This procedural method adds a colour to the guess combination and place
-     * int the appropriate image.
+     * in the appropriate image.
      *
      * @param colour - the number code of the colour </type int>
      */

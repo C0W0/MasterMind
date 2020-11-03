@@ -8,6 +8,12 @@ This is the state class that displays the "Options Menu" on the GUI,
 including all graphics & buttons associated with managing user input.
 This state allows the user to set their desired preference for 2 gameplay elements,
 being number of permitted duplicate colours (1-4), as well as maximum permitted guesses (6-10)
+
+List of Global Variables:
+dupColours - the maximum number of duplicate colours allowed in the secret
+    code. </type int>
+maxGuesses - the maximum number of guesses the codebreaker may attempt before
+    losing. </type int>
 ============================================================================================
 */
 package state;

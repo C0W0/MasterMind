@@ -18,9 +18,9 @@ firstGuess - the variable that tracks whether or not the AI is making its first 
 playerWin - the variable that tracks whether the player (codemaker) has won or lost </type boolean>
 coloursFound - the total number of colours in the player's code that have been found </type int>
 choice - the index of choiceList used to determine the AI's next guess </type int>
-guess[] - the combination of colours that the AI is currently guessing
-knownColours[] - the 4 known colours that the player's code consists of
-allPermutations[][] - the 24 possible permutations of the 4 known colours in the player's code </type int[][]>
+guess - the combination of colours that the AI is currently guessing
+knownColours - the 4 known colours that the player's code consists of
+allPermutations - the 24 possible permutations of the 4 known colours in the player's code </type int[][]>
 choiceList - the list of indexes (row numbers) of all remaining valid permutations. This list is gradually 
     reduced after each guess as invalid permutations that cannot be the code are removed </type ArrayList>
 ===============================================================================
@@ -84,8 +84,6 @@ public class MediumAiState extends GameState {
 		messages = Utils.loadFileAsArrayList("res/data/medium_ai.txt").toArray(new String[0]);
 		message = messages[0];
 		header = "Welcome to MEDIUM AI codebreaker";
-		for(int i = 0; i < messages.length; i++)
-			System.out.println(i+" "+messages[i]);
 	}
 
 	/**start method
@@ -155,12 +153,13 @@ public class MediumAiState extends GameState {
 		ArrayList<String> lines = Utils.splitString(message, 40);
 		if (isGameActive) {
 			if(numberOfGuesses == 1){
+				for(int y = 0; y < lines.size(); y++)
+					Utils.drawText(graphics, lines.get(y),
+							260, 500+25*y, Color.BLACK, Assets.arial20);
 				Utils.drawText(graphics, header,
 						260, 470, Color.BLACK, Assets.arial20);
-				for(int y = 0; y < lines.size(); y++){
-					Utils.drawText(graphics, lines.get(y),
-							260, 505+25*y, Color.BLACK, Assets.arial20);
-				}
+				for(int i = 0; i < 6; i++)
+					graphics.drawImage(Assets.colours[i], 105+55*i, 565, 26, 26, null);
 			}else {
 				for(int y = 0; y < lines.size(); y++){
 					Utils.drawText(graphics, lines.get(y),

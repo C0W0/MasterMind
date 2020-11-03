@@ -7,6 +7,10 @@ The Rules Page class of the Code Breaker
 This is the state class that displays the "Rules Page" on the GUI,
 including all graphics & buttons associated with managing user input. 
 This state allows the user to scroll through the 3 pages of rules about how to play Codebreaker
+
+List of Global Variables:
+count - the page number of the rule currently displayed on the screen </type int>
+rulesPages - an array of BufferedImages which contains all pages of game rules </type BufferedImage[]>
 ============================================================================================
 */
 package state;
